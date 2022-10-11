@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"deploy": "node ./gh-pages.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview"
@@ -19,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"gh-pages": "^4.0.0",
 		"simplenoise": "^1.0.1",
 		"three": "^0.124.0"
 	}
