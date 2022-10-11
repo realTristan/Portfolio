@@ -36,14 +36,14 @@
 <!-- Main Header Content -->
 
 			<!-- Tristan Simpson Header -->
-			<h2 class="font-bold text-4xl xl:text-2xl text-gray-400" style="letter-spacing: 8px;"
+			<h2 class="font-bold text-2xl xl:text-2xl text-gray-400" style="letter-spacing: 8px;"
 				transition:fade={{ delay: 300, duration: 1000 }}>
 				TRISTAN SIMPSON
 			</h2>
 
 			<!-- Developer Header -->
 			<div>
-				<h2 class="font-black text-2xl xl:text-9xl text-white tracking-widest mt-6" 
+				<h2 class="font-black text-7xl xl:text-9xl text-white tracking-widest mt-6" 
 					transition:fade={{ delay: 1800, duration: 1000 }}>
 					Developer
 				</h2>
@@ -51,7 +51,7 @@
 
 			<!-- "+Designer" Header -->
 			{#if MountDesignerTitle}
-				<h2 class="font-black text-2xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
+				<h2 class="font-black text-4xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
 					in:fade={{ delay: 3350, duration: 1000 }} out:fade={{ duration: 200 }}>
 					<mark style="background: none;" class="text-gray-400">+</mark>Designer
 				</h2>
@@ -59,7 +59,7 @@
 			
 			<!-- "+Engineer" Header -->
 			{#if MountEngineerTitle}
-				<h2 class="font-black text-2xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
+				<h2 class="font-black text-4xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
 					in:fade={{ delay: 200, duration: 1000 }} out:fade={{ duration: 500 }}>
 					<mark style="background: none;" class="text-gray-400">+</mark>Engineer
 				</h2>
@@ -67,7 +67,7 @@
 
 			<!-- "+Enthusiast." Header -->
 			{#if MountEnthusiastTitle}
-				<h2 class="font-black text-2xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
+				<h2 class="font-black text-4xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
 					transition:fade={{ delay: 500, duration: 1000 }}>
 					<mark style="background: none;" class="text-gray-400">+</mark>Enthusiast.
 				</h2>
