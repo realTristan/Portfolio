@@ -36,8 +36,9 @@ const animate = () => {
 	// three.js animation function
 	requestAnimationFrame(animate);
 
-	// The Size of the "waves"
-	const SIZE = performance.now() * 0.001;
+	// The Sphere's "Wave" Variables
+	const SPEED = performance.now() * 0.001;
+	const SPIKES = 3;
 
 	// Iterate over the spheres vertices
 	for (let i = 0; i < SPHERE.geometry.vertices.length; i++) {
@@ -45,7 +46,7 @@ const animate = () => {
 		// Use the noise.perlin3 function to create
 		// the "wavy" look.
 		v.normalize().multiplyScalar(
-			1 + 0.3 * noise.perlin3(v.x * 3 + SIZE, v.y * 3, v.z * 3)
+			1 + 0.3 * noise.perlin3(v.x * SPIKES + SPEED, v.y * SPIKES, v.z * SPIKES)
 		);
 	}
 	// Rotate the sphere depending on the mouse position
