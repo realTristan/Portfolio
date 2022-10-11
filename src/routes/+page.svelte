@@ -1,12 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import { newScene, resize } from '$lib/scene.js';
+	import { setScene } from '$lib/scene.js';
 
     // Create a new wavy sphere scene
-	var _newScene;
+	var scene;
 	onMount(() => {
-		newScene(_newScene);
-        resize()
+		setScene(scene);
 	});
 </script>
 
@@ -15,8 +14,11 @@
 	<meta name="description" content="Tristan Simpson's Portfolio" />
 </svelte:head>
 
-<body>
-    <div>
-        <canvas bind:this={_newScene}/>
+<body class="bg-[#202020]">
+    <div class="bg-black h-screen w-screen absolute opacity-40"></div>
+    
+    <div class="flex absolute justify-center items-center ml-96 mt-96">
+        <h2 class="text-center text-2xl text-white">Tristan Simpson</h2>
     </div>
+    <canvas bind:this={scene} style="z-index: -1;"/>
 </body>
