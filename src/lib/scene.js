@@ -7,7 +7,7 @@ const SCENE = new THREE.Scene();
 // Establish a new Sphere then add it to the scene
 const SPHERE = new THREE.Mesh(
 	new THREE.SphereGeometry(1, 128, 128), 
-	new THREE.MeshDepthMaterial()
+	new THREE.MeshDepthMaterial({})
 );
 SCENE.add(SPHERE);
 
@@ -22,12 +22,16 @@ let renderer;
 
 // Establish a mouse move listener for modifying
 // the sphere's rotational axis
+/*
+
 var mouse = new THREE.Vector2()
 document.addEventListener('mousemove', (e) => {
 	e.preventDefault();
     mouse.x = e.clientX / (window.innerWidth * 370)
     mouse.y = e.clientY / (window.innerHeight * 870);
 }, false);
+
+*/
 
 // The animate() function is used to manipulate the sphere,
 // adding noise to it's vertices which in return gives it
@@ -50,8 +54,8 @@ const animate = () => {
 		);
 	}
 	// Rotate the sphere depending on the mouse position
-	SPHERE.rotateX(mouse.x);
-	SPHERE.rotateY(mouse.y);
+	// SPHERE.rotateX(mouse.x);
+	// SPHERE.rotateY(mouse.y);
 
 	// Update the vertices and render the new sphere
 	SPHERE.geometry.verticesNeedUpdate = true;
@@ -79,15 +83,16 @@ window.addEventListener('resize', resize);
 export const setScene = (canvas) => {
 	// Render the new scene
 	renderer = new THREE.WebGLRenderer({
-		// Canvas: The element the sphere is established as
-		canvas: canvas,
-		// Antialias: Object Blurring on Edges.
-		antialias: true,
-		// Alpha: Transparent Scene Background
-		alpha: true
+		canvas: canvas, 
+		antialias: true
 	});
+	// Change the Scene background-color to gray
+	renderer.setClearColor(0x202020);
 	// Size the scene
 	resize();
 	// Animate the sphere
 	animate();
 };
+
+
+// https://www.npmjs.com/package/gsap
