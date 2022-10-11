@@ -13,7 +13,8 @@
 	onMount(async () => {
 		setScene(scene);
 		// Default Mounts
-		SiteMounted, MountDesignerTitle = true;
+		SiteMounted =  true;
+		MountDesignerTitle = true;
 		// 'Engineer' and 'Enthusiast' Title Mounts
 		setTimeout(() => { MountDesignerTitle = false; MountEngineerTitle = true; }, 5000);
 		setTimeout(() => { MountEngineerTitle = false; MountEnthusiastTitle = true; }, 7000);
@@ -43,7 +44,7 @@
 			<!-- Developer Header -->
 			<div>
 				<h2 class="font-black text-2xl xl:text-9xl text-white tracking-widest mt-6" 
-					transition:fade={{ delay: 2000, duration: 1000 }}>
+					transition:fade={{ delay: 1800, duration: 1000 }}>
 					Developer
 				</h2>
 			</div>
@@ -51,7 +52,7 @@
 			<!-- "+Designer" Header -->
 			{#if MountDesignerTitle}
 				<h2 class="font-black text-2xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
-					in:fade={{ delay: 3500, duration: 1000 }} out:fade={{ duration: 200 }}>
+					in:fade={{ delay: 3300, duration: 1000 }} out:fade={{ duration: 200 }}>
 					<mark style="background: none;" class="text-gray-400">+</mark>Designer
 				</h2>
 			{/if}
