@@ -21,9 +21,6 @@
 	});
 </script>
 
-<!-- Black Overlay -->
-<div class="bg-black h-screen w-screen absolute opacity-50"></div>
-
 <!-- Top left "TS" Header -->
 <div class="absolute ml-6 mt-6">
 	<h2 class="font-black text-4xl text-white tracking-wider">TS</h2>
@@ -32,7 +29,7 @@
 <!-- Openings-->
 <div>
 	{#if SiteMounted}
-		<div class="absolute ml-32 mt-36 xl:ml-64 xl:mt-44">
+		<div class="absolute ml-32 mt-36 xl:ml-64 xl:mt-44 mb-10">
 <!-- Main Header Content -->
 
 			<!-- Tristan Simpson Header -->

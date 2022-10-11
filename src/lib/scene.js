@@ -87,7 +87,7 @@ export const setScene = (canvas) => {
 		antialias: true
 	});
 	// Change the Scene background-color to gray
-	renderer.setClearColor(0x202020);
+	renderer.setClearColor(0x101010);
 	// Size the scene
 	resize();
 	// Animate the sphere
