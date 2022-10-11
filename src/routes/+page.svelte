@@ -17,8 +17,8 @@
 <body class="bg-[#202020]">
     <div class="bg-black h-screen w-screen absolute opacity-40"></div>
     
-    <div class="flex absolute justify-center items-center ml-96 mt-96">
-        <h2 class="text-center text-2xl text-white">Tristan Simpson</h2>
+    <div class="flex absolute justify-center items-center ml-80 mt-96">
+        <h2 class="font-black text-4xl text-[#6e6e6e] tracking-widest">Tristan Simpson</h2>
     </div>
     <canvas bind:this={scene} style="z-index: -1;"/>
 </body>
