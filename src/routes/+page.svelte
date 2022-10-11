@@ -17,7 +17,7 @@
 		MountDesignerTitle = true;
 		// 'Engineer' and 'Enthusiast' Title Mounts
 		setTimeout(() => { MountDesignerTitle = false; MountEngineerTitle = true; }, 5000);
-		setTimeout(() => { MountEngineerTitle = false; MountEnthusiastTitle = true; }, 7000);
+		setTimeout(() => { MountEngineerTitle = false; MountEnthusiastTitle = true; }, 6800);
 	});
 </script>
 
@@ -52,7 +52,7 @@
 			<!-- "+Designer" Header -->
 			{#if MountDesignerTitle}
 				<h2 class="font-black text-2xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
-					in:fade={{ delay: 3300, duration: 1000 }} out:fade={{ duration: 200 }}>
+					in:fade={{ delay: 3350, duration: 1000 }} out:fade={{ duration: 200 }}>
 					<mark style="background: none;" class="text-gray-400">+</mark>Designer
 				</h2>
 			{/if}
@@ -60,7 +60,7 @@
 			<!-- "+Engineer" Header -->
 			{#if MountEngineerTitle}
 				<h2 class="font-black text-2xl xl:text-6xl text-white tracking-widest mt-4" style="z-index: -1;"
-					in:fade={{ delay: 500, duration: 1000 }} out:fade={{ duration: 500 }}>
+					in:fade={{ delay: 200, duration: 1000 }} out:fade={{ duration: 500 }}>
 					<mark style="background: none;" class="text-gray-400">+</mark>Engineer
 				</h2>
 			{/if}
