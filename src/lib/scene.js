@@ -6,13 +6,14 @@ const SCENE = new THREE.Scene();
 
 // Establish a new Sphere then add it to the scene
 const SPHERE = new THREE.Mesh(
-	new THREE.SphereGeometry(1, 128, 128), 
-	new THREE.MeshDepthMaterial({})
+	new THREE.SphereGeometry(1, 80, 80, 0, Math.PI * 2, 0, Math.PI),
+	new THREE.MeshDepthMaterial()
 );
 SCENE.add(SPHERE);
+console.log(SPHERE.geometry.vertices.length);
 
 // Establish a new perspective camera and set it's position
-const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5);
 CAMERA.position.z = 1.5;
 CAMERA.position.x = -1.2;
 CAMERA.position.y = -0.40;

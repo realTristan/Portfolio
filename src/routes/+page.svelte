@@ -71,7 +71,7 @@
 			{/if}
 
 			<!-- Projects and About me Buttons (Last to Appear)-->
-			<div class="flex mt-4 xl:mt-8 ml-6"	transition:fade={{ delay: 9200, duration: 1000 }}>
+			<div class="flex mt-6 xl:mt-8 ml-6"	transition:fade={{ delay: 9200, duration: 1000 }}>
 				<button class="w-32 h-10 xl:w-36 xl:h-12 text-base backdrop-blur-sm border-white border-2 text-white rounded-lg font-black tracking-wider hover:bg-white hover:text-black duration-100 ease-linear">
 					PROJECTS
 				</button>
