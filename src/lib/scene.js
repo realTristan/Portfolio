@@ -12,6 +12,11 @@ const SPHERE = new THREE.Mesh(
 SCENE.add(SPHERE);
 SPHERE.position.set(1.2, 0.4);
 
+// Establish a new perspective camera and set it's position
+const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5);
+CAMERA.position.z = 1.5;
+
+
 // Establish an empty renderer for later use
 let renderer;
 
