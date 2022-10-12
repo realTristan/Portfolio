@@ -1,17 +1,17 @@
 <script>
 	import { onMount } from 'svelte';
-	import { setScene } from '$lib/scene.js';
+	import { setScene } from '$lib/wavySphere.js';
 	import { fade } from 'svelte/transition';
 
     // Create a new wavy sphere scene
-	var scene;
+	var wavySphere;
 
 	// Site and Title Mounts
 	let SiteMounted, MountDesignerTitle, MountEngineerTitle, MountEnthusiastTitle = false;
 
 	// On Site Load
 	onMount(async () => {
-		setScene(scene);
+		setScene(wavySphere);
 		// Default Mounts
 		SiteMounted =  true;
 		MountDesignerTitle = true;
@@ -86,4 +86,4 @@
 </div>
 
 <!-- The 3D Wave Sphere -->
-<canvas bind:this={scene} style="z-index: -1;"/>
+<canvas bind:this={wavySphere} style="z-index: -1;"/>

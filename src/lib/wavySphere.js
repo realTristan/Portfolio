@@ -9,8 +9,18 @@ const SPHERE = new THREE.Mesh(
 	new THREE.SphereGeometry(1, 128, 128), 
 	new THREE.MeshDepthMaterial()
 );
-SCENE.add(SPHERE);
+// SCENE.add(SPHERE);
 SPHERE.position.set(1.2, 0.4);
+
+// TEST TUBE
+const TUBE = new THREE.Mesh(
+	new THREE.CylinderGeometry(5, 5, 3, 2), 
+	new THREE.MeshBasicMaterial({color: 0xffff00})
+);
+SCENE.add(TUBE);
+TUBE.position.set(1, 0.1);
+
+
 
 // Establish a new perspective camera and set it's position
 const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5);
@@ -18,7 +28,7 @@ CAMERA.position.z = 1.5;
 
 
 // Establish an empty renderer for later use
-let renderer;
+var renderer;
 
 // Establish a mouse move listener for modifying
 // the sphere's rotational axis
