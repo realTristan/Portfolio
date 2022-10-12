@@ -26,10 +26,13 @@
 		setTimeout(() => { MountDesignerTitle = false; MountEngineerTitle = true; }, 5000);
 		setTimeout(() => { MountEngineerTitle = false; MountEnthusiastTitle = true; }, 6800)
 	});
+
+	// Mouse Button Click Indexing
+	var scrollIndex = 0
 </script>
 
 <!-- Top left "TS" Header -->
-<div class="absolute ml-6 mt-6">
+<div class="top-6 left-6 fixed">
 	<h2 class="font-black text-4xl text-white tracking-wider">TS</h2>
 </div>
 
@@ -79,10 +82,18 @@
 		<!-- Projects and About me Buttons (Last to Appear)-->
 		<div class="flex mt-6 xl:mt-8 ml-6"	transition:fade={{ delay: 9200, duration: 1000 }}>
 			<a href="#main-projects"
+				on:click={() => {
+					if (scrollIndex > 1) scrollIndex = 0;
+					scrollIndex++;
+				}}
 				class="text-center items-center justify-center flex w-32 h-10 xl:w-36 xl:h-12 text-base backdrop-blur-sm border-white border-2 text-white rounded-lg font-black tracking-widest hover:bg-white hover:text-black duration-100 ease-linear">
 				PROJECTS
 			</a>
 			<a href="#about-me"
+				on:click={() => {
+					if (scrollIndex > 1) scrollIndex = 0;
+        			scrollIndex++;
+				}}
 				class="text-center items-center justify-center flex ml-6 w-32 h-10 xl:w-36 xl:h-12 text-base backdrop-blur-sm border-white border-2 text-white rounded-lg font-black tracking-widest hover:bg-white hover:text-black duration-100 ease-linear">
 				ABOUT ME
 			</a>
@@ -90,17 +101,17 @@
 	</div>
 
 	<!-- Mouse Scroll Element -->
-	<MouseScroll/>
+	<MouseScroll scrollIndex={scrollIndex}/>
 
 	<!-- Main Projects -->
 	<div class="mt-[700px] md:mt-[1000px] ml-[500px] absolute" id="main-projects"></div>
-	<div class="text-white absolute mt-[800px] md:mt-[1100px] ml-[30%]">
+	<div class="text-white absolute mt-[800px] md:mt-[1100px] ml-[10%]">
 		<MainProjects/>
 	</div>
 
 	<!-- About Me -->
 	<div class="mt-[2500px] ml-[500px] absolute" id="about-me"></div>
-	<div class="text-white absolute mt-[2600px] ml-[30%]">
+	<div class="text-white absolute mt-[2600px] ml-[10%]">
 		<AboutMe/>
 	</div>
 
