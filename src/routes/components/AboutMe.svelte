@@ -1,31 +1,39 @@
 <script>
-    import summary from "$lib/Summary.txt?raw"
+    // Import each of the summaries
+    import summary1 from "$lib/Summary1.txt?raw"
+    import summary2 from "$lib/Summary2.txt?raw"
+
+    // Control word fade speed
+    let wordFadeInterval = 400;
 
     // Store the summary words in a list
-    var summaryWords = [ { visible: false, word: "Hi,", delay: 0 } ];
-    const SUMMARY = summary.split(" ");
+    let summary1Words = setSummaryData(summary1.split(" "),[{visible:false,word:"Hi,",delay: 0}])
+    let summary2Words = setSummaryData(summary2.split(" "), [])
 
-    // Control word fade in speed
-    var n = 800;
+    // Function to set the append the words in the summary along
+    // with their corresponding visibility status and appearance delay
+    function setSummaryData(SummaryConstant, summaryWordsArray) {
+        // Add The About Me Summary Word Animations
+        for (let i = 1; i < SummaryConstant.length; i++) {
+            // If previous split was the end of a sentance
+            if (SummaryConstant[i-1].includes(".")) wordFadeInterval += 1000;
+            // If the previous split requires a pause
+            if (SummaryConstant[i-1].includes(",")) wordFadeInterval += 500;
 
-    // Add The About Me Summary Word Animations
-    for (let i = 1; i < SUMMARY.length; i++) {
-        // If previous split was the end of a sentance
-        if (SUMMARY[i-1].includes(".")) n += 1000;
-        // If the previous split requires a pause
-        if (SUMMARY[i-1].includes(",")) n += 500;
-
-        // Append the word to the array
-        summaryWords.push({
-            visible: false,
-            word: SUMMARY[i],
-            delay: ((i+1)*200)+n
-        });
+            // Append the word to the array
+            summaryWordsArray.push({
+                visible: false,
+                word: SummaryConstant[i],
+                delay: ((i+1)*200)+wordFadeInterval
+            });
+        }
+        // Return the new array
+        return summaryWordsArray;
     }
 
     // Page Observer Viewport Variables
-    var headerInView = false;
-    var observer;
+    let headerInView = false;
+    let observer;
 
     // Page Observer Viewport Function
     function viewport(e) {
@@ -49,8 +57,11 @@
 
         // Show all of the words
         headerInView = true;
-        for (let i = 0; i < summaryWords.length; i++) {
-            setTimeout(() => summaryWords[i].visible = true, summaryWords[i].delay+1000);
+        for (let i = 0; i < summary1Words.length; i++) {
+            setTimeout(() => summary1Words[i].visible = true, summary1Words[i].delay+1000);
+        }
+        for (let i = 0; i < summary2Words.length; i++) {
+            setTimeout(() => summary2Words[i].visible = true, summary2Words[i].delay+11200);
         }
     }}>
     <!-- Contents -->
@@ -58,9 +69,16 @@
     <div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out"></div>
 </div>
 
-<!-- My Summary -->
+<!-- First Paragraph -->
+<div class="flex mt-6 mb-12 ml-4 w-[40rem] flex-wrap">
+    {#each summary1Words as s}
+        <h2 class="{s.visible?'opacity-1 -translate-y-2':'opacity-0 -translate-y-0'} text-gray-300 mb-4 mr-1 text-center text-2xl duration-1000 ease-in-out tracking-widest">{s.word}&nbsp;</h2>
+    {/each}
+</div>
+
+<!-- Second Paragraph -->
 <div class="flex mt-6 ml-4 w-[40rem] flex-wrap">
-    {#each summaryWords as s}
-        <h2 class="{s.visible?'opacity-1 -translate-y-2':'opacity-0 -translate-y-0'} text-white text-center text-2xl duration-1000 ease-in-out tracking-widest">{s.word}&nbsp;</h2>
+    {#each summary2Words as s}
+        <h2 class="{s.visible?'opacity-1 -translate-y-2':'opacity-0 -translate-y-0'} text-gray-300 mb-4 mr-1 text-center text-2xl duration-1000 ease-in-out tracking-widest">{s.word}&nbsp;</h2>
     {/each}
 </div>

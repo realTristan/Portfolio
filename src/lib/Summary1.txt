@@ -1,0 +1,1 @@
+* i'm Tristan. I'm a full-stack developer with over two years of experience designing, developing, and implementing solutions using a vast range of technologies and programming languages. Despite my dominance in Python, Go, Rust and Svelte, I can confidently understand the majority of other popular Languages and Services.

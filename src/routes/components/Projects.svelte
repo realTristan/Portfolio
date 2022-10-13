@@ -17,12 +17,6 @@
     }
 </script>
 
-<div class=" duration-[2000ms] ease-in-out">
-    <a class="text-white text-4xl font-black tracking-widest {headerInView?'opacity-1':'opacity-0'}" rel="noopener noreferrer" target="_blank" href="https://github.com/realTristan?tab=repositories">PROJECTS</a>
-    <div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'}"></div>
-</div>
-
-
 <!-- Contents -->
 <div use:viewport class="{headerInView?'opacity-1 -translate-y-8':'opacity-0 -translate-y-0'} duration-[3000ms] ease-in-out mt-20"
     on:enterViewport={() => {
@@ -37,6 +31,8 @@
         }
     }}
 >
+    <a class="text-white text-4xl font-black tracking-widest" rel="noopener noreferrer" target="_blank" href="https://github.com/realTristan?tab=repositories">PROJECTS</a>
+    <div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[3000ms] ease-in-out"></div>
     <div class="mt-32">
         {#each projectsInView as s}
             <div class="flex mt-12 mr-20">

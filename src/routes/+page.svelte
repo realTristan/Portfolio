@@ -31,15 +31,19 @@
 	var scrollIndex = 0
 </script>
 
+<!-- The 3D Wave Sphere -->
+<canvas bind:this={wavySphere} style="top: 0px; z-index: -1; position: fixed;"/>
+
 <!-- Top left "TS" Header -->
-<div class="top-6 left-6 fixed">
-	<h2 class="font-black text-4xl text-white tracking-wider">TS</h2>
+<div class="group top-6 left-6 fixed">
+	<a class="font-black text-4xl text-white tracking-wider" href="/">TS</a>
+	<div class="bg-[#1014FF] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-[1000ms] ease-in-out"></div>
 </div>
 
 <!-- Openings-->
 <div> {#if SiteMounted}
 	<!-- Main Header Content -->
-	<div class="absolute ml-32 mt-36 xl:ml-64 xl:mt-44 mb-10">
+	<div class="ml-32 mt-36 xl:ml-64 xl:mt-44 mb-10">
 
 		<!-- Tristan Simpson Header -->
 		<h2 class="font-bold text-2xl xl:text-2xl text-gray-400" style="letter-spacing: 8px;"
@@ -99,27 +103,28 @@
 			</a>
 		</div>
 	</div>
-
 	<!-- Mouse Scroll Element -->
-	<MouseScroll scrollIndex={scrollIndex}/>
+	<div class="flex justify-center items-center">
+		<MouseScroll scrollIndex={scrollIndex}/>
+	</div>
+
+	<!-- Seperator -->
+	<div class="h-[300px]"></div>
 
 	<!-- Main Projects -->
-	<div class="top-[700px] md:top-[1000px] left-[500px] absolute" id="projects"></div>
-	<div class="text-white absolute top-[800px] md:top-[1100px] left-[10%]">
+	<div id="projects"></div>
+	<div class="ml-40 mt-[10rem]">
 		<MainProjects/>
 	</div>
 
 	<!-- About Me -->
-	<div class="top-[2300px] left-[500px] absolute" id="about"></div>
-	<div class="text-white absolute top-[2400px] left-[10%]">
+	<div id="about"></div>
+	<div class="ml-40 mt-[10rem]">
 		<AboutMe/>
 	</div>
 
 <!-- Closings -->
 {/if} </div>
-
-<!-- The 3D Wave Sphere -->
-<canvas bind:this={wavySphere} style="z-index: -1; position: fixed;"/>
 
 <style>
 	/* Scroll Bar */
