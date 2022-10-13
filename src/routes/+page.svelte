@@ -32,7 +32,7 @@
 </script>
 
 <!-- The 3D Wave Sphere -->
-<canvas bind:this={wavySphere} style="top: 0px; z-index: -1; position: fixed;"/>
+<canvas bind:this={wavySphere} style="top: 0px; right: 0px; z-index: -1; position: fixed;"/>
 
 <!-- Top left "TS" Header -->
 <div class="group top-6 left-6 fixed">
