@@ -1,0 +1,48 @@
+[
+    [
+        {
+            "title": "Simpson Research",
+            "description": "Established Organization Dedicated to Teaching Advanced Programming Techniques",
+            "image": "https://cdn.discordapp.com/attachments/855191729924734986/1029910252977651793/sr.PNG",
+            "href": "https://simpsonresearch.ca/",
+            "visible": false
+        },
+        {
+            "title": "Versa Anti Cheat",
+            "description": "A MOSS Gaming Anti-Cheat Alterative built with Discord Integration using Python and the PyQt5 GUI Library",
+            "image": "https://user-images.githubusercontent.com/75189508/121789353-430d8780-cba3-11eb-83a6-cb1230daef59.png",
+            "href": "https://github.com/realTristan/Versa",
+            "visible": false
+        },
+        {
+            "title": "class.io",
+            "description": "An Easy-to-use Advanced Classroom built with Svelte, Rust and Tailwind CSS",
+            "image": "https://user-images.githubusercontent.com/75189508/193428491-28348d48-5a33-4975-8dfa-9c339f8f9db4.PNG",
+            "href": "https://github.com/realTristan/class.io",
+            "visible": false
+        }
+    ],
+    [
+        {
+            "title": "uwaterloo.courses",
+            "description": "Ultra Fast Course Catalog for the University of Waterloo built with Svelte, Golang and Redis",
+            "image": "https://user-images.githubusercontent.com/75189508/186290354-a5ed2710-f1a5-43c8-ae19-c0252d874fa3.png",
+            "href": "https://github.com/realTristan/uwaterloo.courses",
+            "visible": false
+        },
+        {
+            "title": "Athena",
+            "description": "Advanced Discord Matchmaking Bot with fully Functional Caching and Database Systems, Dozens of Commands, and more!",
+            "image": "https://cdn.discordapp.com/attachments/855191729924734986/1029911850340601897/Capture5.PNG",
+            "href": "https://github.com/realTristan/Athena",
+            "visible": false
+        },
+        {
+            "title": "tristansimpson.ca",
+            "description": "This Beautiful Portfolio built with Three.js, Svelte.js and Tailwind CSS, Hosted on Github.io",
+            "image": "https://cdn.discordapp.com/attachments/855191729924734986/1029912592468160662/Capture6.PNG",
+            "href": "https://github.com/realTristan/tristansimpson.ca",
+            "visible": false
+        }
+    ]
+]

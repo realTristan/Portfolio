@@ -2,7 +2,7 @@
     import { fade } from 'svelte/transition';
 
 	// Mouse Scroll Click Indexing
-	const SCROLL_INDICES = [0, "#main-projects", "#about-me"];
+	const SCROLL_INDICES = [0, "#projects", "#about"];
     export var scrollIndex;
 </script>
 

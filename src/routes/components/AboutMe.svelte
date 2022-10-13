@@ -1,7 +1,9 @@
 <script>
+    import summary from "$lib/Summary.txt?raw"
+
     // Store the summary words in a list
     var summaryWords = [ { visible: false, word: "Hi,", delay: 0 } ];
-    const SUMMARY = `* i'm Tristan. I'm a full-stack developer with over two years of experience designing, developing, and implementing solutions using a vast range of technologies and programming languages. Although I am dominant in Python, Go, Rust and Svelte, I can confidently understand the majority of other Languages and Services.`.split(" ");
+    const SUMMARY = summary.split(" ");
 
     // Control word fade in speed
     var n = 800;
@@ -11,14 +13,14 @@
         // If previous split was the end of a sentance
         if (SUMMARY[i-1].includes(".")) n += 1000;
         // If the previous split requires a pause
-        if (SUMMARY[i-1].includes(",")) n += 600;
+        if (SUMMARY[i-1].includes(",")) n += 500;
 
         // Append the word to the array
         summaryWords.push({
             visible: false,
             word: SUMMARY[i],
             delay: ((i+1)*200)+n
-        })
+        });
     }
 
     // Page Observer Viewport Variables
@@ -36,7 +38,7 @@
             });
         });
         observer.observe(e);
-        return {destroy() { observer.unobserve(e) }}
+        return {destroy() { observer.unobserve(e) }};
     }
 </script>
 
@@ -55,12 +57,12 @@
         }
     }}>
     <!-- Contents -->
-    <h1 class="text-white text-start text-4xl font-black tracking-widest">ABOUT ME</h1>
-    <div class="bg-[#1014FF] h-1 w-24 mt-2 rounded-full"></div>
+    <a class="text-white text-start text-4xl font-black tracking-widest" href="#about">ABOUT ME</a>
+    <div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out"></div>
 </div>
 
 <!-- My Summary -->
-<div class="flex mt-6 ml-4 mr-[1000px] flex-wrap">
+<div class="flex mt-6 ml-4 w-[40rem] flex-wrap">
     {#each summaryWords as s}
         <h2 class="{s.visible?'opacity-1 -translate-y-2':'opacity-0 -translate-y-0'} text-white text-center text-2xl duration-1000 ease-in-out tracking-widest">{s.word}&nbsp;</h2>
     {/each}

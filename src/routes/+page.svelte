@@ -6,7 +6,7 @@
 
 	// Import Components
 	import AboutMe from './components/AboutMe.svelte';
-	import MainProjects from './components/MainProjects.svelte';
+	import MainProjects from './components/Projects.svelte';
 	import MouseScroll from './components/MouseScroll.svelte';
 
     // Create a new wavy sphere scene
@@ -81,7 +81,7 @@
 
 		<!-- Projects and About me Buttons (Last to Appear)-->
 		<div class="flex mt-6 xl:mt-8 ml-6"	transition:fade={{ delay: 9200, duration: 1000 }}>
-			<a href="#main-projects"
+			<a href="#projects"
 				on:click={() => {
 					if (scrollIndex > 1) scrollIndex = 0;
 					scrollIndex++;
@@ -89,7 +89,7 @@
 				class="text-center items-center justify-center flex w-32 h-10 xl:w-36 xl:h-12 text-base backdrop-blur-sm border-white border-2 text-white rounded-lg font-black tracking-widest hover:bg-white hover:text-black duration-100 ease-linear">
 				PROJECTS
 			</a>
-			<a href="#about-me"
+			<a href="#about"
 				on:click={() => {
 					if (scrollIndex > 1) scrollIndex = 0;
         			scrollIndex++;
@@ -104,14 +104,14 @@
 	<MouseScroll scrollIndex={scrollIndex}/>
 
 	<!-- Main Projects -->
-	<div class="mt-[700px] md:mt-[1000px] ml-[500px] absolute" id="main-projects"></div>
-	<div class="text-white absolute mt-[800px] md:mt-[1100px] ml-[10%]">
+	<div class="top-[700px] md:top-[1000px] left-[500px] absolute" id="projects"></div>
+	<div class="text-white absolute top-[800px] md:top-[1100px] left-[10%]">
 		<MainProjects/>
 	</div>
 
 	<!-- About Me -->
-	<div class="mt-[2500px] ml-[500px] absolute" id="about-me"></div>
-	<div class="text-white absolute mt-[2600px] ml-[10%]">
+	<div class="top-[2300px] left-[500px] absolute" id="about"></div>
+	<div class="text-white absolute top-[2400px] left-[10%]">
 		<AboutMe/>
 	</div>
 
