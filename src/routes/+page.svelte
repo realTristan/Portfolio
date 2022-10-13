@@ -119,7 +119,7 @@
 {/if} </div>
 
 <!-- The 3D Wave Sphere -->
-<canvas bind:this={wavySphere} style="z-index: -1;"/>
+<canvas bind:this={wavySphere} style="z-index: -1; position: fixed;"/>
 
 <style>
 	/* Scroll Bar */
