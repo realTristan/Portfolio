@@ -17,27 +17,22 @@
     }
 </script>
 
-<!-- Contents -->
-<div class="flex items-baseline">
-    <a class="text-white text-4xl font-black tracking-widest" rel="noopener noreferrer" target="_blank" href="https://github.com/realTristan?tab=repositories">PROJECTS</a>
-    <div class="bg-[#1014FF] h-1 mt-2 rounded-full duration-1000 w-0 group-hover:w-full ease-in-out"></div>
+<div class=" duration-[2000ms] ease-in-out">
+    <a class="text-white text-4xl font-black tracking-widest {headerInView?'opacity-1':'opacity-0'}" rel="noopener noreferrer" target="_blank" href="https://github.com/realTristan?tab=repositories">PROJECTS</a>
+    <div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'}"></div>
 </div>
-<div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out"></div>
 
+
+<!-- Contents -->
 <div use:viewport class="{headerInView?'opacity-1 -translate-y-8':'opacity-0 -translate-y-0'} duration-[3000ms] ease-in-out mt-20"
     on:enterViewport={() => {
+        if (headerInView) return;
+
+        // Enable the headers and show all the projects
         headerInView = true;
         for (let i = 0; i < projectsInView.length; i++) {
             for (let n = 0; n < projectsInView[i].length; n++) {
                 setTimeout(() => projectsInView[i][n].visible = true, (i+1)*400);
-            }
-        }
-    }}
-    on:exitViewport={() => {
-        headerInView = false;
-        for (let i = 0; i < projectsInView.length; i++) {
-            for (let n = 0; n < projectsInView[i].length; n++) {
-                projectsInView[i][n].visible = false;
             }
         }
     }}

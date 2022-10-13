@@ -44,13 +44,10 @@
 
 <!-- ABOUT ME Header-->
 <div use:viewport class="{headerInView?'opacity-1 -translate-y-8':'opacity-0 -translate-y-0'} duration-[2000ms] ease-in-out"
-    on:exitViewport={() => {
-        headerInView = false;
-        for (let i = 0; i < summaryWords.length; i++) {
-            summaryWords[i].visible = false;
-        }
-    }}
     on:enterViewport={() => {
+        if (headerInView) return;
+
+        // Show all of the words
         headerInView = true;
         for (let i = 0; i < summaryWords.length; i++) {
             setTimeout(() => summaryWords[i].visible = true, summaryWords[i].delay+1000);
