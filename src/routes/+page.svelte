@@ -38,7 +38,7 @@
 
 <!-- Top left "TS" Header -->
 <div class="group top-6 left-6 fixed">
-	<a class="font-black text-4xl text-white tracking-widest" href="http://127.0.0.1:5173/">TS</a>
+	<a class="font-black text-4xl text-white tracking-widest" href="/">TS</a>
 	<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
 </div>
 
@@ -49,18 +49,18 @@
 	<div class="top-28 -left-2 fixed" in:fade={{ delay: 9200, duration: 1000 }}>
 		{#if showSidebar}
 			<div class="group mb-28 -rotate-90">
-				<a class="text-sm text-white tracking-widest" href="http://127.0.0.1:5173/#projects">PROJECTS</a>
+				<a class="text-sm text-white tracking-widest" href="/#projects">PROJECTS</a>
 				<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
 			</div>
 
 			<div class="group mb-10 -rotate-90">
-				<a class="text-sm text-white tracking-widest" href="http://127.0.0.1:5173/#about">ABOUT ME</a>
+				<a class="text-sm text-white tracking-widest" href="/#about">ABOUT ME</a>
 				<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
 			</div>
 
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div class="group mt-[9.7rem] -rotate-90" on:click={() => showSidebar = false}>
-				<a class="text-sm text-white tracking-widest" href="http://127.0.0.1:5173/projects">MORE PROJECTS</a>
+				<a class="text-sm text-white tracking-widest" href="/projects">MORE PROJECTS</a>
 				<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
 			</div>
 		{/if}
