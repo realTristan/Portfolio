@@ -66,7 +66,7 @@
     }}>
     <!-- Contents -->
     <a class="text-white text-start text-4xl font-black tracking-widest" href="#about">ABOUT ME</a>
-    <div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out"></div>
+    <div class="bg-[#38ffff] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out"></div>
 </div>
 
 <!-- First Paragraph -->

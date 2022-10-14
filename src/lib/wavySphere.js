@@ -17,13 +17,13 @@ const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHei
 CAMERA.position.z = 1.5;
 
 // Establish an empty renderer for later use
-var renderer;
+let renderer;
 
 // Establish a mouse move listener for modifying
 // the sphere's rotational axis
 /*
 
-var mouse = new THREE.Vector2()
+let mouse = new THREE.Vector2()
 document.addEventListener('mousemove', (e) => {
 	e.preventDefault();
     mouse.x = e.clientX / (window.innerWidth * 370)
@@ -92,6 +92,3 @@ export const setScene = (canvas) => {
 	// Animate the sphere
 	animate();
 };
-
-
-// https://www.npmjs.com/package/gsap

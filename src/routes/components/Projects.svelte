@@ -1,7 +1,7 @@
 <script>
     import projectsInView from "$lib/Projects.json"
-    var headerInView = false;
-    var observer;
+    let headerInView = false;
+    let observer;
 
     function viewport(e) {
         if (observer) return;
@@ -33,7 +33,7 @@
 >
     <div class="group">
         <a class="text-white text-4xl font-black tracking-widest" rel="noopener noreferrer" target="_blank" href="https://github.com/realTristan?tab=repositories">PROJECTS</a>
-        <div class="bg-[#1014FF] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out group-hover:w-52"></div>
+        <div class="bg-[#38ffff] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out group-hover:w-52"></div>
     </div>
     <div class="mt-16">
         {#each projectsInView as s}
