@@ -32,12 +32,29 @@
 </script>
 
 <!-- The 3D Wave Sphere -->
-<canvas bind:this={wavySphere} style="top: 0px; right: 0px; z-index: -1; position: fixed;"/>
+<!-- <canvas bind:this={wavySphere} style="top: 0px; right: 0px; z-index: -1; position: fixed;"/> -->
 
 <!-- Top left "TS" Header -->
 <div class="group top-6 left-6 fixed">
 	<a class="font-black text-4xl text-white tracking-wider" href="/">TS</a>
 	<div class="bg-[#1014FF] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-[1000ms] ease-in-out"></div>
+</div>
+<div class="top-24 left-6 fixed">
+	
+	<div class="group my-10">
+		<a class="font-black text-sm text-white tracking-wider" href="#projects">PROJECTS</a>
+		<div class="bg-[#1014FF] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-[1000ms] ease-in-out"></div>
+	</div>
+
+	<div class="group my-10">
+		<a class="font-black text-sm text-white tracking-wider" href="#about">ABOUT ME</a>
+		<div class="bg-[#1014FF] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-[1000ms] ease-in-out"></div>
+	</div>
+
+	<div class="group my-10">
+		<a class="font-black text-sm text-white tracking-wider" href="/projects">MORE PROJECTS</a>
+		<div class="bg-[#1014FF] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-[1000ms] ease-in-out"></div>
+	</div>
 </div>
 
 <!-- Openings-->
