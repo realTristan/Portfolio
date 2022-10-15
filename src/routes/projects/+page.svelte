@@ -84,7 +84,7 @@
         </div>
 
         <!-- Projects Header -->
-        <div><h2 class="font-black text-5xl xl:text-7xl 2xl:text-8xl text-white tracking-widest mt-2 2xl:mt-6" in:fade={{ delay: 1500, duration: 2000 }}>
+        <div><h2 class="font-black text-5xl xl:text-7xl 2xl:text-9xl text-white tracking-widest mt-2 2xl:mt-6" in:fade={{ delay: 1500, duration: 2000 }}>
             Projects
         </h2></div>
     </div>
