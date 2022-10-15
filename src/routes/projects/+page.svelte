@@ -19,6 +19,17 @@
         // Add the wavy sphere to the scene
         setScene(wavySphere);
 
+        // Auto Scroll Listeners and Timeouts
+        let autoScroll = true;
+        let timeout = null;
+        setTimeout(() => window.setInterval(() => autoScroll?window.scrollBy(0, 5):0, 15), 4000);
+        document.addEventListener('wheel', (_) => {
+            if (autoScroll) autoScroll = false;
+            // After two seconds of not scrolling, auto scroll again
+            clearTimeout(timeout);
+            timeout = setTimeout(() => autoScroll = true, 5000);
+        });
+
         // Get 'realTristan' Github Data
         await self.fetch("https://api.github.com/users/realTristan/repos")
             .then(response => response.json())
@@ -73,18 +84,20 @@
     <!-- Github Repositories -->
     <div class="flex justify-end items-end"><div>
         {#each repos as data, i}
-            <div class="my-20 mr-24 translate-y-0 hover:-translate-y-8 duration-[400ms] ease-in-out w-[50rem]" in:fade={{ delay: 2200+(250*i), duration: 1000 }}>
+            <div class="group my-20 mr-24 translate-y-0 hover:-translate-y-8 duration-[400ms] ease-in-out w-[50rem]" in:fade={{ delay: 2200+(250*i), duration: 1000 }}>
                 <a href={data.html_url} rel="noopener noreferrer" target="_blank" class="mb-48 mr-10 h-64 px-10 pt-6 rounded-[2.5rem] tracking-widest shadow-[#202020]">
-                    <h2 class="text-white text-center text-xl font-black">{data.name}</h2>
+                    <h2 class="text-white text-center text-xl font-black">
+                        <mark style="background: none;" class="text-[#38ffff]">#</mark>&nbsp;{data.name}
+                    </h2>
                     <h2 class="text-gray-200 text-center text-md font-base mt-4">{data.description}</h2>
+                    <div class="flex justify-center items-center mt-6">
+                        {#each data.topics as topic}
+                            <div class="">
+                                <h2 class="text-[0.60rem] text-gray-50 tracking-widest mx-4 uppercase">{topic}</h2>
+                            </div>
+                        {/each}
+                    </div>
                 </a>
-                <div class="flex justify-center items-center">
-                    {#each data.topics as topic}
-                        <div class="">
-                            <h2 class="text-[0.60rem] text-gray-50 tracking-widest mx-4 uppercase">{topic}</h2>
-                        </div>
-                    {/each}
-                </div>
             </div>
         {/each}
     </div></div>
