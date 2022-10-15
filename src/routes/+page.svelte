@@ -28,11 +28,11 @@
 		MountDesignerTitle = true;
 
 		// Add the wavy sphere to the scene
-		setScene(wavySphere);
+		await setScene(wavySphere);
 
 		// 'Engineer' and 'Enthusiast' Title Mounts
-		setTimeout(() => { MountDesignerTitle = false; MountEngineerTitle = true; }, 5000);
-		setTimeout(() => { MountEngineerTitle = false; MountEnthusiastTitle = true; }, 6800)
+		setTimeout(async () => { MountDesignerTitle = false; MountEngineerTitle = true; }, 5000);
+		setTimeout(async () => { MountEngineerTitle = false; MountEnthusiastTitle = true; }, 6800)
 	});
 </script>
 

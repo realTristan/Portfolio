@@ -23,7 +23,7 @@ let renderer;
 // The animate() function is used to manipulate the sphere,
 // adding noise to it's vertices which in return gives it
 // that wavy kind of look.
-const animate = () => {
+const animate = async () => {
 	// three.js animation function
 	requestAnimationFrame(animate);
 
@@ -39,10 +39,6 @@ const animate = () => {
 			1 + 0.3 * noise.perlin3(v.x * 3 + SPEED, v.y * 3, v.z * 3)
 		);
 	}
-	// Rotate the sphere depending on the mouse position
-	// SPHERE.rotateX(mouse.x);
-	// SPHERE.rotateY(mouse.y);
-
 	// Update the vertices and render the new sphere
 	SPHERE.geometry.verticesNeedUpdate = true;
 	renderer.render(SCENE, CAMERA);
@@ -51,7 +47,7 @@ const animate = () => {
 // The resize() function is used to resize the scene.
 // This is required for if the user resizes the site,
 // which is caught using the Window Resize Listener
-export const resize = () => {
+export const resize = async () => {
 	// Set the pixel ratio
 	renderer.setPixelRatio(window.devicePixelRatio);
 	// Set the screen size
@@ -66,13 +62,13 @@ window.addEventListener('resize', resize);
 
 // The setScene() function is the primary function
 // for updating the sphere's scene data.
-export const setScene = (canvas) => {
+export const setScene = async (canvas) => {
 	// Render the new scene
 	renderer = new THREE.WebGLRenderer({ canvas: canvas });
 	// Change the Scene background-color to gray
 	renderer.setClearColor(0x101010);
 	// Size the scene
-	resize();
+	await resize();
 	// Animate the sphere
-	animate();
+	await animate();
 };

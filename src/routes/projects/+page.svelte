@@ -3,10 +3,9 @@
 </svelte:head>
 
 <script>
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import { fade } from 'svelte/transition';
     import { setScene } from '$lib/wavySphere.js';
-    import { onDestroy } from 'svelte';
 
     // Create a new wavy sphere scene
     let wavySphere;
@@ -15,28 +14,33 @@
     // Github Repo Data
     let repos = [];
 
-
     // AutoScroll Interval
     let interval = null;
-    onDestroy(() => clearInterval(interval));
+    onDestroy(async () => clearInterval(interval));
 
     // On Page Mount
     onMount(async () => {
         // Initialize the scene and the page contents
         SiteMounted = true;
-        setScene(wavySphere);
+        await setScene(wavySphere);
 
         // Get 'realTristan' Github Data
         await self.fetch("https://api.github.com/users/realTristan/repos")
             .then(response => response.json())
-            .then(json => repos = json)
+            .then(json => repos = [...repos, ...json])
             .catch(error => console.log(error));
-            
+        
+        
+        // Get 'Simpson Computer Technologies Research' Github Data
+        await self.fetch("https://api.github.com/users/Simpson-Computer-Technologies-Research/repos")
+            .then(response => response.json())
+            .then(json => repos = [...repos, ...json])
+            .catch(error => console.log(error));
             
         // Auto Scroll intervals and variables
         let autoScroll = false;
-        interval = window.setInterval(() => autoScroll?window.scrollBy(0, 5) :0, 15)
-        setTimeout(() => autoScroll = true, 4000);
+        interval = window.setInterval(async () => autoScroll?window.scrollBy(0, 5) :0, 15)
+        setTimeout(async () => autoScroll = true, 4000);
 
         // Scroll wheel action event listener
         let timeout = null;
@@ -45,7 +49,7 @@
 
             // After two seconds of not scrolling, auto scroll again
             clearTimeout(timeout);
-            timeout = setTimeout(() => autoScroll = true, 5000);
+            timeout = setTimeout(async () => autoScroll = true, 5000);
         });
     });
 </script>
