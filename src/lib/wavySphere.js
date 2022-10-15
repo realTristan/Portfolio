@@ -10,7 +10,8 @@ const SPHERE = new THREE.Mesh(
 	new THREE.MeshDepthMaterial()
 );
 SCENE.add(SPHERE);
-SPHERE.position.set(1.2, 0.4);
+SPHERE.position.set(1.3, 0.4);
+SPHERE.rotation.set(2, 1, 2);
 
 // Establish a new perspective camera and set it's position
 const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5);
@@ -18,19 +19,6 @@ CAMERA.position.z = 1.5;
 
 // Establish an empty renderer for later use
 let renderer;
-
-// Establish a mouse move listener for modifying
-// the sphere's rotational axis
-/*
-
-let mouse = new THREE.Vector2()
-document.addEventListener('mousemove', (e) => {
-	e.preventDefault();
-    mouse.x = e.clientX / (window.innerWidth * 370)
-    mouse.y = e.clientY / (window.innerHeight * 870);
-}, false);
-
-*/
 
 // The animate() function is used to manipulate the sphere,
 // adding noise to it's vertices which in return gives it
@@ -41,15 +29,14 @@ const animate = () => {
 
 	// The Sphere's "Wave" Variables
 	const SPEED = performance.now() * 0.001;
-	const SPIKES = 3;
 
 	// Iterate over the spheres vertices
-	for (let i = 0; i < SPHERE.geometry.vertices.length; i++) {
+	for (let i = 500; i < SPHERE.geometry.vertices.length/1.6; i++) {
 		let v = SPHERE.geometry.vertices[i];
-		// Use the noise.perlin3 function to create
-		// the "wavy" look.
+		// Use the noise.perlin3 function to create the "wavy" look.
+		// '3' is the number of 'waves'
 		v.normalize().multiplyScalar(
-			1 + 0.3 * noise.perlin3(v.x * SPIKES + SPEED, v.y * SPIKES, v.z * SPIKES)
+			1 + 0.3 * noise.perlin3(v.x * 3 + SPEED, v.y * 3, v.z * 3)
 		);
 	}
 	// Rotate the sphere depending on the mouse position
@@ -81,10 +68,7 @@ window.addEventListener('resize', resize);
 // for updating the sphere's scene data.
 export const setScene = (canvas) => {
 	// Render the new scene
-	renderer = new THREE.WebGLRenderer({
-		canvas: canvas, 
-		antialias: true
-	});
+	renderer = new THREE.WebGLRenderer({ canvas: canvas });
 	// Change the Scene background-color to gray
 	renderer.setClearColor(0x101010);
 	// Size the scene
