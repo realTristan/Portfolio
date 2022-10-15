@@ -37,7 +37,7 @@
     </div>
     <div class="mt-16">
         {#each projectsInView as s}
-            <div class="flex mt-12 mr-20">
+            <div class="lg:flex mt-12 mr-20 w-[32rem] lg:w-auto">
                 {#each s as p}
                     <a href={p.href} rel="noopener noreferrer" target="_blank" class="{p.visible?'opacity-1 -translate-y-8':'opacity-0 -translate-y-0'} mb-48 mr-10 h-64 px-10 pt-6 rounded-[2.5rem] ease-in-out tracking-widest shadow-[#202020] translate-y-0 hover:-translate-y-10 duration-[400ms]">
                         <h2 class="text-white text-center text-xl font-black">{p.title}</h2>

@@ -52,14 +52,30 @@
             timeout = setTimeout(async () => autoScroll = true, 5000);
         });
     });
+    let test = false;
 </script>
 
 <div> {#if SiteMounted}
+    <!--
+        <div on:click={() => test = true}>
+            <div class="block lg:hidden left-4 top-4 fixed">
+                <div class="w-6 h-[0.2rem] bg-white rounded-full"></div>
+                <div class="w-6 h-[0.2rem] bg-white mt-1 rounded-full"></div>
+                <div class="w-6 h-[0.15rem] bg-white mt-1 rounded-full"></div>
+            </div>
+        </div>
+        
+        
+        <div class="{test?'opacity-50':'opacity-0'} left-0 top-0 fixed bg-black w-full h-full">
+        
+        </div>
+    -->
+
     <!-- Main Header Content -->
-    <div class="ml-32 mt-36 xl:ml-64 xl:mt-44 mb-10 fixed">
+    <div class="ml-40 xl:ml-48 2xl:ml-64 mt-16 lg:mt-36 xl:mt-44 mb-10 lg:fixed">
         <div class="group">
             <!-- /realTristan Header -->
-            <a class="font-black text-4xl text-white group-hover:text-gray-300 tracking-widest mt-8 ml-2 ease-linear duration-100" style="z-index: -1;"
+            <a class="font-black text-[1.2rem] xl:text-2xl 2xl:text-4xl text-white group-hover:text-gray-300 tracking-widest mt-8 ml-2 ease-linear duration-100"
                 href="https://github.com/realTristan?tab=repositories" rel="noopener noreferrer" target="_blank"
                 in:fade={{ delay: 500, duration: 1000 }}>
                 <mark style="background: none;" class="text-[#38ffff]">/</mark>&nbsp;realTristan
@@ -68,19 +84,19 @@
         </div>
 
         <!-- Projects Header -->
-        <div><h2 class="font-black text-7xl xl:text-9xl text-white tracking-widest mt-6" in:fade={{ delay: 1500, duration: 2000 }}>
+        <div><h2 class="font-black text-5xl xl:text-7xl 2xl:text-8xl text-white tracking-widest mt-2 2xl:mt-6" in:fade={{ delay: 1500, duration: 2000 }}>
             Projects
         </h2></div>
     </div>
 
     <!-- Top left "TS" Header -->
-    <div class="group top-6 left-6 fixed">
+    <div class="group top-6 left-6 fixed hidden lg:block">
         <a class="font-black text-4xl text-white tracking-widest" href="/">TS</a>
         <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
     </div>
 
     <!-- Sidebar Items -->
-    <div class="top-28 left-[0.9rem] fixed" in:fade={{ delay: 2500, duration: 2000 }}>
+    <div class="top-28 left-[0.9rem] fixed hidden lg:block" in:fade={{ delay: 2500, duration: 2000 }}>
         <div class="group mb-28 -rotate-90">
             <a class="text-sm text-white tracking-widest" href="/">HOME</a>
             <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
@@ -98,10 +114,10 @@
     </div>
 
     <!-- Github Repositories -->
-    <div class="flex justify-end items-end"><div>
+    <div class="lg:flex justify-center lg:justify-end" style="z-index: -1;"><div>
         {#each repos as data, i}
-            <div class="group my-20 mr-24 translate-y-0 hover:-translate-y-8 duration-[400ms] ease-in-out w-[50rem]" in:fade={{ delay: 2200+(250*i), duration: 1000 }}>
-                <a href={data.html_url} rel="noopener noreferrer" target="_blank" class="mb-48 mr-10 h-64 px-10 pt-6 rounded-[2.5rem] tracking-widest shadow-[#202020]">
+            <div class="group my-20 translate-y-0 hover:-translate-y-8 duration-[400ms] ease-in-out lg:mr-10 mx-28 lg:mx-0 w-[20rem] md:w-[40rem] 2xl:w-[50rem]" in:fade={{ delay: 2200+(250*i), duration: 1000 }}>
+                <a href={data.html_url} rel="noopener noreferrer" target="_blank" class="mb-48 h-64 px-10 pt-6 rounded-[2.5rem] tracking-widest shadow-[#202020]">
                     <h2 class="text-white text-center text-xl font-black">
                         <mark style="background: none;" class="text-[#38ffff]">#</mark>&nbsp;{data.name}
                     </h2>

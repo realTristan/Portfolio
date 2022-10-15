@@ -70,7 +70,7 @@
 </div>
 
 <!-- First Paragraph -->
-<div class="flex mt-6 mb-12 ml-4 w-[40rem] flex-wrap">
+<div class="flex mt-6 mb-12 ml-4 w-[30rem] flex-wrap lg:w-[40rem]">
     {#each summary1Words as s}
         <h2 class="{s.visible?'opacity-1 -translate-y-2':'opacity-0 -translate-y-0'} text-gray-300 mb-4 mr-1 text-center text-2xl duration-1000 ease-in-out tracking-widest">{s.word}&nbsp;</h2>
     {/each}

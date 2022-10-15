@@ -46,7 +46,7 @@
 <div> {#if SiteMounted}
 
 	<!-- Sidebar Items -->
-	<div class="top-28 -left-2 fixed" in:fade={{ delay: 9200, duration: 1000 }}>
+	<div class="hidden lg:block top-28 -left-2 fixed" in:fade={{ delay: 9200, duration: 1000 }}>
 		{#if showSidebar}
 			<div class="group mb-28 -rotate-90">
 				<a class="text-sm text-white tracking-widest" href="/#projects">PROJECTS</a>
@@ -108,7 +108,7 @@
 		{/if}
 
 		<!-- Projects and About Me Buttons (Last to Appear) -->
-		<div class="flex mt-6 xl:mt-8 ml-6"	in:fade={{ delay: 9200, duration: 1000 }}>
+		<div class="hidden lg:flex mt-6 xl:mt-8 ml-6"	in:fade={{ delay: 9200, duration: 1000 }}>
 			<a href="#projects"
 				on:click={() => { if (scrollIndex > 1) scrollIndex = 0; scrollIndex++; }}
 				class="text-center items-center justify-center flex w-32 h-10 xl:w-36 xl:h-12 text-base backdrop-blur-sm border-white border-2 text-white rounded-lg font-black tracking-widest hover:bg-white hover:text-black duration-100 ease-linear">
@@ -127,7 +127,7 @@
 	</div>
 
 	<!-- Seperator -->
-	<div class="h-[300px]"></div>
+	<div class="md:h-[200px] lg:h-[250px] xl:h-[300px]"></div>
 
 	<!-- Main Projects -->
 	<div id="projects"></div>
