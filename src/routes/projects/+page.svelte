@@ -8,8 +8,8 @@
     import { setScene } from '$lib/wavySphere.js';
 
     // Create a new wavy sphere scene
-    let wavySphere;
     let SiteMounted = false;
+    let wavySphere;
 
     // Github Repo Data
     let repos = [];
@@ -37,40 +37,28 @@
             .then(json => repos = [...repos, ...json])
             .catch(error => console.log(error));
             
-        // Auto Scroll intervals and variables
-        let autoScroll = false;
-        interval = window.setInterval(async () => autoScroll?window.scrollBy(0, 5) :0, 15)
-        setTimeout(async () => autoScroll = true, 4000);
 
-        // Scroll wheel action event listener
-        let timeout = null;
-        document.addEventListener('wheel', (_) => {
-            if (autoScroll) autoScroll = false;
+        // Scroll wheel action event listener. Don't use if on mobile!
+        if (!navigator.userAgentData.mobile) {
+            // Auto Scroll intervals and variables
+            let autoScroll = false;
+            interval = window.setInterval(async () => autoScroll?window.scrollBy(0, 5) :0, 15)
+            setTimeout(async () => autoScroll = true, 4000);
 
-            // After two seconds of not scrolling, auto scroll again
-            clearTimeout(timeout);
-            timeout = setTimeout(async () => autoScroll = true, 5000);
-        });
+            // Scroll timeouts
+            let timeout = null;
+            document.addEventListener('wheel', (_) => {
+                if (autoScroll) autoScroll = false;
+
+                // After two seconds of not scrolling, auto scroll again
+                clearTimeout(timeout);
+                timeout = setTimeout(async () => autoScroll = true, 5000);
+            });
+        }
     });
-    let test = false;
 </script>
 
 <div> {#if SiteMounted}
-    <!--
-        <div on:click={() => test = true}>
-            <div class="block lg:hidden left-4 top-4 fixed">
-                <div class="w-6 h-[0.2rem] bg-white rounded-full"></div>
-                <div class="w-6 h-[0.2rem] bg-white mt-1 rounded-full"></div>
-                <div class="w-6 h-[0.15rem] bg-white mt-1 rounded-full"></div>
-            </div>
-        </div>
-        
-        
-        <div class="{test?'opacity-50':'opacity-0'} left-0 top-0 fixed bg-black w-full h-full">
-        
-        </div>
-    -->
-
     <!-- Main Header Content -->
     <div class="ml-40 xl:ml-48 2xl:ml-64 mt-16 lg:mt-36 xl:mt-44 mb-10 lg:fixed">
         <div class="group">

@@ -137,7 +137,7 @@
 
 	<!-- About Me -->
 	<div id="about"></div>
-	<div class="ml-40 mt-[10rem] mb-10">
+	<div class="ml-40 mt-[10rem]">
 		<AboutMe/>
 	</div>
 
