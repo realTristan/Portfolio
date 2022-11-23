@@ -7,7 +7,7 @@
     let wordFadeInterval = 400;
 
     // Store the summary words in a list
-    let summary1Words = setSummaryData(summary1.split(" "),[{visible:false,word:"Bonjour,",delay: 0}])
+    let summary1Words = setSummaryData(summary1.split(" "),[{visible:false,word:"Hi,",delay: 0}])
     let summary2Words = setSummaryData(summary2.split(" "), [])
 
     // Function to set the append the words in the summary along

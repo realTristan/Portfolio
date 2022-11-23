@@ -67,13 +67,14 @@
 
 		<!-- Developer Header -->
 		<h2 class="font-black text-7xl lg:text-8xl xl:text-9xl text-white tracking-widest mt-10" in:fade={{ delay: 1800, duration: 1000 }}>
-			Développeur
+			Developer
 		</h2>
+		
 
 		<!-- "+" SubHeaders -->
 		{#if MountDesignerTitle} <SubHeader title="Designer" infade={{ delay: 3350, duration: 1000 }} outfade={{ duration: 200 }}/> {/if}
-		{#if MountEngineerTitle} <SubHeader title="Ingénieur" infade={{ delay: 200, duration: 1000 }} outfade={{ duration: 300 }}/> {/if}
-		{#if MountEnthusiastTitle} <SubHeader title="Enthousiaste." infade={{ delay: 300, duration: 1000 }} outfade={{}}/> {/if}
+		{#if MountEngineerTitle} <SubHeader title="Engineer" infade={{ delay: 200, duration: 1000 }} outfade={{ duration: 300 }}/> {/if}
+		{#if MountEnthusiastTitle} <SubHeader title="Enthusiast." infade={{ delay: 300, duration: 1000 }} outfade={{}}/> {/if}
 	</div>
 
 	<!-- Projects and About Me Buttons -->

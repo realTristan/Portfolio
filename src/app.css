@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@900&display=swap');
-
 /* Smooth Scroll */
-html, body, * { scroll-behavior: smooth; font-family: 'Encode Sans', sans-serif; }
+html, body, * { scroll-behavior: smooth; }
 
 /* Scroll Bar */
 :root::-webkit-scrollbar { width: 0.25rem; }
