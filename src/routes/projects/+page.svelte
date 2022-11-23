@@ -79,7 +79,7 @@
     </div>
 
     <!-- Top left "TS" Header -->
-    <div class="group top-12 left-12 fixed">
+    <div class="group top-14 left-12 fixed">
         <a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
         <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
     </div>
