@@ -3,18 +3,15 @@
 </svelte:head>
 
 <script>
+    // Imports
     import { onMount, onDestroy } from "svelte";
     import { fade } from 'svelte/transition';
     import { setScene } from '$lib/wavySphere.js';
 
-    // Create a new wavy sphere scene
+    // Variables
     let SiteMounted = false;
     let wavySphere;
-
-    // Github Repo Data
     let repos = [];
-
-    // AutoScroll Interval
     let interval = null;
     onDestroy(async () => clearInterval(interval));
 
@@ -57,8 +54,12 @@
         }
     });
 </script>
+<svelte:window on:beforeunload={clearInterval(interval)}/> 
 
-<div> {#if SiteMounted}
+<!-- Background Gradient -->
+<div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
+
+{#if SiteMounted}
     <!-- Main Header Content -->
     <div class="ml-40 xl:ml-48 2xl:ml-64 mt-16 lg:mt-36 xl:mt-44 mb-10 lg:fixed">
         <div class="group">
@@ -68,35 +69,36 @@
                 in:fade={{ delay: 500, duration: 1000 }}>
                 <mark style="background: none;" class="text-[#38ffff]">/</mark>&nbsp;realTristan
             </a>
-            <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-8 duration-700 ease-in-out"></div>
+            <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-6 duration-700 ease-in-out"></div>
         </div>
 
         <!-- Projects Header -->
-        <div><h2 class="font-black text-5xl xl:text-7xl 2xl:text-9xl text-white tracking-widest mt-2 2xl:mt-6" in:fade={{ delay: 1500, duration: 2000 }}>
+        <h2 class="font-black text-5xl xl:text-7xl 2xl:text-9xl text-white tracking-widest mt-2 2xl:mt-6" in:fade={{ delay: 1500, duration: 2000 }}>
             Projects
-        </h2></div>
+        </h2>
     </div>
 
     <!-- Top left "TS" Header -->
-    <div class="group top-6 left-6 fixed hidden lg:block">
-        <a class="font-black text-4xl text-white tracking-widest" href="/">TS</a>
+    <div class="group top-12 left-12 fixed">
+        <a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
         <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
     </div>
 
+
     <!-- Sidebar Items -->
-    <div class="top-28 left-[0.9rem] fixed hidden lg:block" in:fade={{ delay: 2500, duration: 2000 }}>
-        <div class="group mb-28 -rotate-90">
-            <a class="text-sm text-white tracking-widest" href="/">HOME</a>
+    <div class="hidden lg:block top-36 ml-8 fixed" in:fade={{ delay: 300, duration: 2000 }}>
+        <div class="group mb-32 -rotate-90">
+            <a class="text-sm font-bold text-gray-200 tracking-[0.2rem]" href="/">HOME</a>
             <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
         </div>
 
-        <div class="group mb-10 -rotate-90">
-            <a class="text-sm text-white tracking-widest" href="/#projects">PROJECTS</a>
+        <div class="group mb-32 -rotate-90">
+            <a class="text-sm font-bold text-gray-200 tracking-[0.2rem]" href="/#projects">PROJECTS</a>
             <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
         </div>
 
-        <div class="group mt-[7.7rem] -rotate-90">
-            <a class="text-sm text-white tracking-widest" href="/#about">ABOUT ME</a>
+        <div class="group -rotate-90">
+            <a class="text-sm font-bold text-gray-200 tracking-[0.2rem]" href="/#about">ABOUT ME</a>
             <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
         </div>
     </div>
@@ -121,7 +123,7 @@
             </div>
         {/each}
     </div></div>
-{/if}</div>
+{/if}
 
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={wavySphere} style="top: 0px; right: 0px; z-index: -1; position: fixed;"/>

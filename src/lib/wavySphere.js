@@ -64,9 +64,7 @@ window.addEventListener('resize', resize);
 // for updating the sphere's scene data.
 export const setScene = async (canvas) => {
 	// Render the new scene
-	renderer = new THREE.WebGLRenderer({ canvas: canvas });
-	// Change the Scene background-color to gray
-	renderer.setClearColor(0x101010);
+	renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
 	// Size the scene
 	await resize();
 	// Animate the sphere
