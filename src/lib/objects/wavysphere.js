@@ -70,7 +70,7 @@ export const SetWavySphereScene = async (canvas) => {
 		antialias: true
 	});
 	// Size the scene
-	resize();
+	await resize();
 	// Animate the sphere
 	await animate();
 };
