@@ -14,11 +14,11 @@ SPHERE.position.set(1.3, 0.4);
 SPHERE.rotation.set(2, 1, 2);
 
 // Establish a new perspective camera and set it's position
-const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5);
+const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 CAMERA.position.z = 1.5;
 
 // Establish an empty renderer for later use
-let renderer;
+let Renderer;
 
 // The animate() function is used to manipulate the sphere,
 // adding noise to it's vertices which in return gives it
@@ -30,7 +30,7 @@ const animate = async () => {
 	const SPEED = performance.now() * 0.001;
 
 	// Iterate over the spheres vertices
-	for (let i = 500; i < SPHERE.geometry.vertices.length/1.6; i++) {
+	for (let i = 500; i < SPHERE.geometry.vertices.length; i++) {
 		let v = SPHERE.geometry.vertices[i];
 		// Use the noise.perlin3 function to create the "wavy" look.
 		// '3' is the number of 'waves'
@@ -40,17 +40,17 @@ const animate = async () => {
 	}
 	// Update the vertices and render the new sphere
 	SPHERE.geometry.verticesNeedUpdate = true;
-	renderer.render(SCENE, CAMERA);
+	Renderer.render(SCENE, CAMERA);
 };
 
 // The resize() function is used to resize the scene.
 // This is required for if the user resizes the site,
 // which is caught using the Window Resize Listener
-export const resize = () => {
+export const resize = async () => {
 	// Set the pixel ratio
-	renderer.setPixelRatio(window.devicePixelRatio);
+	Renderer.setPixelRatio(window.devicePixelRatio);
 	// Set the screen size
-	renderer.setSize(window.innerWidth, window.innerHeight);
+	Renderer.setSize(window.innerWidth, window.innerHeight);
 	// Set the camera aspect ratio (most likely 16:9)
 	CAMERA.aspect = window.innerWidth / window.innerHeight;
 	// Update projection matrix
@@ -63,7 +63,12 @@ window.addEventListener('resize', resize);
 // for updating the sphere's scene data.
 export const SetWavySphereScene = async (canvas) => {
 	// Render the new scene
-	renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+	Renderer = new THREE.WebGLRenderer({
+		canvas: canvas, 
+		alpha: true, 
+		powerPreference: "high-performance", 
+		antialias: true
+	});
 	// Size the scene
 	resize();
 	// Animate the sphere
