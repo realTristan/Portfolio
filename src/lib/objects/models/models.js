@@ -19,18 +19,21 @@ export const LoadLaptopObject = async (Scene, Wallpaper) => GLTF_LOADER.load('./
 			obj.material.needsUpdate = true;
 		};
 	});
-	model.scale.set(3, 3, 3);
+	// Update the model position and rotation
 	model.position.set(0, -0.2, 0);
 	model.rotation.set(0.1, 0, 0);
 	Scene.add(model);
 
-	window.addEventListener("resize", () => {
-		if (window.innerWidth > 1500) {
-			return SIZE = 3;
-		}
+	// Resize the models with the screen size
+	const resize = async () => {
+		if (window.innerWidth > 1500) model.scale.set(3, 3, 3);
 		else {
 			const SIZE = window.innerWidth / 500;
-			model.scale.set(SIZE, SIZE, SIZE)
+			model.scale.set(SIZE, SIZE, SIZE);
 		}
-	})
+	}
+	resize();
+
+	// Watch for when the user resizes the window
+	window.addEventListener("resize", async () => resize());
 });

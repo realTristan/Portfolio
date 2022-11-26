@@ -46,7 +46,7 @@ const animate = async () => {
 // The resize() function is used to resize the scene.
 // This is required for if the user resizes the site,
 // which is caught using the Window Resize Listener
-export const resize = async () => {
+export const resize = () => {
 	// Set the pixel ratio
 	renderer.setPixelRatio(window.devicePixelRatio);
 	// Set the screen size
@@ -65,7 +65,7 @@ export const SetWavySphereScene = async (canvas) => {
 	// Render the new scene
 	renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
 	// Size the scene
-	await resize();
+	resize();
 	// Animate the sphere
 	await animate();
 };
