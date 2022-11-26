@@ -65,8 +65,9 @@
 </script>
 
 <!--THREEJS Object Loading Header -->
-<div id="loading-header" class="fade-in mr-[50vw]">
-	<h2 class="flex justify-center items-center mt-96 text-white text-3xl font-black tracking-widest">LOADING<mark style="color: #35d0ff; background: none;">&nbsp;3D OBJECTS</mark></h2>
+<div id="loading-header" class="fade-in">
+	<h2 class="flex justify-items-start mx-60 items-start mt-[40vh] text-white text-3xl font-black tracking-widest">LOADING<mark style="color: #35d0ff; background: none;">&nbsp;3D OBJECTS</mark></h2>
+	<h2 class="flex justify-items-start mx-60 items-start mt-6 text-white text-xl font-black tracking-widest">This may take awhile..</h2>
 </div>
 
 <!-- Background Gradient -->
