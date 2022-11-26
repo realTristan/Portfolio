@@ -11,7 +11,7 @@
             <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
         </div>
 
-        <div class="group mb-[12rem] -rotate-90">
+        <div class="group mb-[11.5rem] -rotate-90">
             <a class="text-sm font-bold text-gray-200 tracking-[0.2rem]" href="/#about">ABOUT ME</a>
             <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-12 duration-700 ease-in-out"></div>
         </div>

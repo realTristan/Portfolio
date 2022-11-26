@@ -1,10 +1,12 @@
 import { THREE } from "$lib/Imports.js";
 
-// Load the laptop model
-export const LoadLaptopObject = async (Loader, Scene, Wallpaper) => Loader.load('./laptop.gltf', async (model) => {
-	model.material = new THREE.MeshPhysicalMaterial({ roughness: 0, metalness: 1 });
+// Textures Map
+export const Textures = {
+    GithubWallpaper: new THREE.TextureLoader().load("./textures/github_wallpaper.jpg")
+}
 
-	// Set the new model variable
+// Load the laptop model
+export const LoadLaptopObject = async (Loader, Scene, Wallpaper) => Loader.load('./laptop.glb', async (model) => {
 	model = model.scene;
 	model.traverse((obj) => {
 		if (obj.name == "Laptop_screen_NakedSingularity_MI_laptop_01_screen_0") {
@@ -21,7 +23,7 @@ export const LoadLaptopObject = async (Loader, Scene, Wallpaper) => Loader.load(
 	const resize = async () => {
 		if (window.innerWidth > 1500) model.scale.set(3, 3, 3);
 		else {
-			const SIZE = window.innerWidth / 500;
+			const SIZE = window.innerWidth / 600;
 			model.scale.set(SIZE, SIZE, SIZE);
 		}
 	}

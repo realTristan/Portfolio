@@ -79,22 +79,16 @@
 	<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
 </div>
 
-<!-- The 3D Laptop -->
-<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block lg:-mt-16 xl:-mt-2 2xl:mt-10 3xl:mt-1 ml-[28vw] 2xl:ml-[30vw] 3xl:ml-[26vw]" style="z-index: 1;"/>
-	
-<!-- The 3D Wave Sphere -->
-<canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 0;"/>
-
 <!-- When the site loads -->
 {#if SiteMounted}
 	<!-- Particles -->
-	<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -2;"/>
+	<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -1;"/>
 
 	<!-- Side Menu -->
-	<Sidebar/>
+	<Sidebar style="z-index: 2;"/>
 
 	<!-- Main Header Content -->
-	<div class="mb-10 ml-32 mt-36 lg:ml-44 2xl:ml-64 2xl:mt-48 3xl:mt-56 3xl:ml-72 relative">
+	<div class="mb-10 ml-32 mt-36 lg:ml-44 2xl:ml-64 2xl:mt-48 3xl:mt-56 3xl:ml-72 relative" style="z-index: 2;">
 
 		<!-- Tristan Simpson Header -->
 		<h2 class="font-black text-xl xl:text-2xl text-gray-300" style="letter-spacing: 8px;" in:fade={{ delay: 300, duration: 1000 }}>
@@ -132,3 +126,9 @@
 		<AboutMe/>
 	</div>
 {/if}
+
+<!-- The 3D Laptop -->
+<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block lg:-mt-16 xl:-mt-2 2xl:mt-10 3xl:mt-1 ml-[28vw] 2xl:ml-[30vw] 3xl:ml-[26vw]" style="z-index: 2;"/>
+
+<!-- The 3D Wave Sphere -->
+<canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 1;"/>
