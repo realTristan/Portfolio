@@ -1,5 +1,5 @@
 <script>
-    import projectsInView from "$lib/Projects.json"
+    import projectsInView from "$lib/static/Projects.json"
     let headerInView = false;
     let observer;
 

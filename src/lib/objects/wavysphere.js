@@ -24,7 +24,6 @@ let renderer;
 // adding noise to it's vertices which in return gives it
 // that wavy kind of look.
 const animate = async () => {
-	// three.js animation function
 	requestAnimationFrame(animate);
 
 	// The Sphere's "Wave" Variables
@@ -60,9 +59,9 @@ export const resize = async () => {
 // Window Resize Listener
 window.addEventListener('resize', resize);
 
-// The setScene() function is the primary function
+// The SetWavySphereScene() function is the primary function
 // for updating the sphere's scene data.
-export const setScene = async (canvas) => {
+export const SetWavySphereScene = async (canvas) => {
 	// Render the new scene
 	renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
 	// Size the scene

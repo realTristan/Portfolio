@@ -1,6 +1,6 @@
 <script>
 	// Library Imports
-	import { setScene } from '$lib/WavySphere.js';
+	import { LoadLaptopObject, Textures, SetWavySphereScene, SetModelScene } from "$lib/Imports.js";
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
@@ -12,12 +12,12 @@
 	import Sidebar from "./components/Sidebar.svelte";
 
 	// Particles imports
-	import * as ParticleData from '$lib/particles.json';
+	import * as ParticleData from '$lib/static/particles.json';
 	import Particles from "svelte-particles";
 	import { loadFull } from "tsparticles";
 
     // Variables
-	let WavySphere;
+	let WavySphere, LaptopObject;
 	let SiteMounted,
 		MountDesignerTitle,
 		MountEngineerTitle,
@@ -25,7 +25,10 @@
 
 	// On Site Load
 	onMount(async () => {
-		await setScene(WavySphere);
+		let Scene1 = await SetModelScene(LaptopObject);
+		await LoadLaptopObject(Scene1, Textures.GithubWallpaper);
+
+		await SetWavySphereScene(WavySphere);
 
 		// Default Mounts
 		SiteMounted = true;
@@ -39,6 +42,9 @@
 
 <!-- Particles -->
 <Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -2;"/>
+
+<!-- The 3D Laptop -->
+<canvas bind:this={LaptopObject} class="absolute top-0 hidden lg:block lg:-mt-16 xl:-mt-2 2xl:mt-10 3xl:mt-1 ml-[28vw] 2xl:ml-[30vw] 3xl:ml-[26vw]" style="z-index: 1;"/>
 
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={WavySphere} style="top: 0px; right: 0px; position: fixed; z-index: 0;"/>
@@ -58,15 +64,15 @@
 	<Sidebar/>
 
 	<!-- Main Header Content -->
-	<div class="ml-32 mt-36 lg:ml-44 xl:ml-80 xl:mt-52 mb-10 relative duration-200 ease-linear">
+	<div class="mb-10 ml-32 mt-36 lg:ml-44 2xl:ml-64 2xl:mt-48 3xl:mt-56 3xl:ml-72 relative">
 
 		<!-- Tristan Simpson Header -->
-		<h2 class="font-black text-2xl lg:text-2xl text-gray-300" style="letter-spacing: 8px;" in:fade={{ delay: 300, duration: 1000 }}>
+		<h2 class="font-black text-xl xl:text-2xl text-gray-300" style="letter-spacing: 8px;" in:fade={{ delay: 300, duration: 1000 }}>
 			TRISTAN SIMPSON
 		</h2>
 
 		<!-- Developer Header -->
-		<h2 class="font-black text-7xl lg:text-8xl xl:text-9xl text-white tracking-widest mt-10" in:fade={{ delay: 1800, duration: 1000 }}>
+		<h2 class="font-black text-7xl xl:text-8xl 2xl:text-9xl text-white tracking-widest mt-10" in:fade={{ delay: 1800, duration: 1000 }}>
 			Developer
 		</h2>
 		
