@@ -78,7 +78,7 @@
 <div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
 	
 <!-- Top left "TS" Header -->
-<div class="group top-14 left-12 fixed">
+<div class="group top-14 left-12 fixed" style="z-index: 2;">
 	<a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
 	<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
 </div>
@@ -86,7 +86,7 @@
 <!-- When the site loads -->
 {#if SiteMounted}
 	<!-- Side Menu -->
-	{#if ShowSidebar} <Sidebar style="z-index: 2;"/> {/if}
+	{#if ShowSidebar} <Sidebar/> {/if}
 
 	<!-- Main Header Content -->
 	<div class="mb-10 ml-[17vw] 2xl:ml-64 3xl:ml-72 mt-36 2xl:mt-48 3xl:mt-56 relative" style="z-index: 2;">
