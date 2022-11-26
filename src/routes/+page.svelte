@@ -34,7 +34,6 @@
 	// Function to toggle the mounts
 	const ToggleMounts = () => {
 		document.getElementById("loading-header").classList.add("hidden", "fade-out");
-		document.getElementById("wavysphere").classList.remove("opacity-0");
 
 		// Default Mounts
 		SiteMounted = true;
@@ -49,19 +48,19 @@
 	onMount(async () => {
 		// Load the wavy sphere
 		await SetWavySphereScene(WavySphere);
-		
+
 		// Make sure user's not on mobile
 		if (window.innerWidth < 1024) return ToggleMounts();
 
 		// Load the 3D Object
-		const GLTF_LOADER = new GLTFLoader(new THREE.LoadingManager(
+		const Loader = new GLTFLoader(new THREE.LoadingManager(
 			onload = () => ToggleMounts(),
 			onprogress = (obj) => console.log(`Object Loaded: ${obj}`)
 		));
-		GLTF_LOADER.setDRACOLoader(DRACO_LOADER);
+		Loader.setDRACOLoader(DRACO_LOADER);
 
 		let LaptopModelScene = await SetModelScene(LaptopObject);
-		await LoadLaptopObject(GLTF_LOADER, LaptopModelScene, Textures.GithubWallpaper);
+		await LoadLaptopObject(Loader, LaptopModelScene, Textures.GithubWallpaper);
 	});
 </script>
 
@@ -70,25 +69,25 @@
 	<h2 class="flex justify-center items-center mt-96 text-white text-3xl font-black tracking-widest">LOADING<mark style="color: #35d0ff; background: none;">&nbsp;3D OBJECTS</mark></h2>
 </div>
 
+<!-- Background Gradient -->
+<div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
+	
+<!-- Top left "TS" Header -->
+<div class="group top-14 left-12 fixed">
+	<a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
+	<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
+</div>
+
 <!-- The 3D Laptop -->
 <canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block lg:-mt-16 xl:-mt-2 2xl:mt-10 3xl:mt-1 ml-[28vw] 2xl:ml-[30vw] 3xl:ml-[26vw]" style="z-index: 1;"/>
 	
 <!-- The 3D Wave Sphere -->
-<canvas bind:this={ WavySphere } id="wavysphere" style="top: 0px; right: 0px; position: fixed; z-index: 0;"/>
+<canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 0;"/>
 
 <!-- When the site loads -->
 {#if SiteMounted}
 	<!-- Particles -->
 	<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -2;"/>
-	
-	<!-- Background Gradient -->
-	<div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
-	
-	<!-- Top left "TS" Header -->
-	<div class="group top-14 left-12 fixed">
-		<a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
-		<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
-	</div>
 
 	<!-- Side Menu -->
 	<Sidebar/>
