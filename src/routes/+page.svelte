@@ -1,9 +1,16 @@
 <script>
 	// Library Imports
-	import { Textures, SetWavySphereScene, SetModelScene } from "$lib/Imports.js";
-	import { GLTFLoader, THREE, DRACO_LOADER } from "$lib/Imports.js";
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import { 
+		Textures, 
+		SetWavySphereScene, 
+		SetModelScene, 
+		LoadLaptopObject, 
+		GLTFLoader, 
+		THREE, 
+		DRACO_LOADER 
+	} from "$lib/Imports.js";
 
 	// Import Components
 	import MouseButton from './components/MouseButton.svelte';
@@ -26,6 +33,9 @@
 
 	// Function to toggle the mounts
 	const ToggleMounts = () => {
+		document.getElementById("loading-header").classList.add("hidden", "fade-out");
+		document.getElementById("wavysphere").classList.remove("opacity-0");
+
 		// Default Mounts
 		SiteMounted = true;
 		MountDesignerTitle = true;
@@ -37,72 +47,49 @@
 
 	// On Site Load
 	onMount(async () => {
+		// Load the wavy sphere
 		await SetWavySphereScene(WavySphere);
-
+		
 		// Make sure user's not on mobile
-		if (window.innerWidth < 1024) {
-			ToggleMounts();
-		}
-		else {
-			let LaptopModelScene = await SetModelScene(LaptopObject);
+		if (window.innerWidth < 1024) return ToggleMounts();
 
-			// Load the 3D Object
-			const GLTF_LOADER = new GLTFLoader(new THREE.LoadingManager(
-				onload = () => ToggleMounts()
-			));
-			GLTF_LOADER.setDRACOLoader(DRACO_LOADER);
+		// Load the 3D Object
+		const GLTF_LOADER = new GLTFLoader(new THREE.LoadingManager(
+			onload = () => ToggleMounts(),
+			onprogress = (obj) => console.log(`Object Loaded: ${obj}`)
+		));
+		GLTF_LOADER.setDRACOLoader(DRACO_LOADER);
 
-			// Load the laptop model
-			GLTF_LOADER.load('./laptop.gltf', async (model) => {
-				model.material = new THREE.MeshPhysicalMaterial({ roughness: 0, metalness: 1 });
-				model = model.scene;
-				model.position.set(0, -0.2, 0);
-				model.rotation.set(0.1, 0, 0);
-				model.traverse((obj) => {
-					if (obj.name == "Laptop_screen_NakedSingularity_MI_laptop_01_screen_0") {
-						obj.material.map = Textures.GithubWallpaper;
-						obj.material.needsUpdate = true;
-					};
-				});
-				LaptopModelScene.add(model);
-
-				// Resize the models with the screen size
-				const resize = async () => {
-					if (window.innerWidth > 1500) model.scale.set(3, 3, 3);
-					else {
-						const SIZE = window.innerWidth / 500;
-						model.scale.set(SIZE, SIZE, SIZE);
-					}
-				}
-				resize();
-
-				// Watch for when the user resizes the window
-				window.addEventListener("resize", async () => resize());
-			});
-		}
+		let LaptopModelScene = await SetModelScene(LaptopObject);
+		await LoadLaptopObject(GLTF_LOADER, LaptopModelScene, Textures.GithubWallpaper);
 	});
 </script>
 
-<!-- Particles -->
-<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -2;"/>
+<!--THREEJS Object Loading Header -->
+<div id="loading-header" class="fade-in mr-[50vw]">
+	<h2 class="flex justify-center items-center mt-96 text-white text-3xl font-black tracking-widest">LOADING<mark style="color: #35d0ff; background: none;">&nbsp;3D OBJECTS</mark></h2>
+</div>
 
 <!-- The 3D Laptop -->
 <canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block lg:-mt-16 xl:-mt-2 2xl:mt-10 3xl:mt-1 ml-[28vw] 2xl:ml-[30vw] 3xl:ml-[26vw]" style="z-index: 1;"/>
-
+	
 <!-- The 3D Wave Sphere -->
-<canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 0;"/>
-
-<!-- Background Gradient -->
-<div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
-
-<!-- Top left "TS" Header -->
-<div class="group top-14 left-12 fixed">
-	<a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
-	<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
-</div>
+<canvas bind:this={ WavySphere } id="wavysphere" style="top: 0px; right: 0px; position: fixed; z-index: 0;"/>
 
 <!-- When the site loads -->
 {#if SiteMounted}
+	<!-- Particles -->
+	<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -2;"/>
+	
+	<!-- Background Gradient -->
+	<div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
+	
+	<!-- Top left "TS" Header -->
+	<div class="group top-14 left-12 fixed">
+		<a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
+		<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
+	</div>
+
 	<!-- Side Menu -->
 	<Sidebar/>
 
@@ -121,8 +108,8 @@
 
 		<!-- "+" SubHeaders -->
 		{#if MountDesignerTitle} <SubHeader title="Designer" infade={{ delay: 3350, duration: 1000 }} outfade={{ duration: 200 }}/> {/if}
-		{#if MountEngineerTitle} <SubHeader title="Engineer" infade={{ delay: 200, duration: 1000 }} outfade={{ duration: 300 }}/> {/if}
-		{#if MountEnthusiastTitle} <SubHeader title="Enthusiast." infade={{ delay: 300, duration: 1000 }} outfade={{}}/> {/if}
+		{#if MountEngineerTitle} <SubHeader title="Engineer" infade={{ delay: 220, duration: 1000 }} outfade={{ duration: 300 }}/> {/if}
+		{#if MountEnthusiastTitle} <SubHeader title="Enthusiast." infade={{ delay: 320, duration: 1000 }} outfade={{}}/> {/if}
 	</div>
 
 	<!-- Projects and About Me Buttons -->

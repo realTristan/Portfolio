@@ -5,6 +5,12 @@
 /* Smooth Scroll */
 html, body, * { scroll-behavior: smooth; }
 
+/* Basic Fading Animations */
+.fade-out { animation: fade_out 1s; opacity: 0; }
+.fade-in { animation: fade_in 0.5s; opacity: 1; }
+@keyframes fade_out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fade_in { from { opacity: 0; } to { opacity: 1; } }
+
 /* Scroll Bar */
 :root::-webkit-scrollbar { width: 0.25rem; }
 :root::-webkit-scrollbar-track { background: transparent; }

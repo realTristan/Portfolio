@@ -1,14 +1,7 @@
-import { GLTFLoader, THREE, DRACO_LOADER } from "$lib/Imports.js";
-
-// Load the 3D Object
-const GLTF_LOADER = new GLTFLoader(new THREE.LoadingManager(
-	onload = () => console.log("Loaded All Objects!"),
-	onprogress = (obj) => console.log(`Object Loaded: ${obj}`)
-));
-GLTF_LOADER.setDRACOLoader(DRACO_LOADER);
+import { THREE } from "$lib/Imports.js";
 
 // Load the laptop model
-export const LoadLaptopObject = async (Scene, Wallpaper) => GLTF_LOADER.load('./laptop.gltf', async (model) => {
+export const LoadLaptopObject = async (Loader, Scene, Wallpaper) => Loader.load('./laptop.gltf', async (model) => {
 	model.material = new THREE.MeshPhysicalMaterial({ roughness: 0, metalness: 1 });
 
 	// Set the new model variable
