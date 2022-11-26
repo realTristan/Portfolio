@@ -25,7 +25,7 @@
 	import { loadFull } from "tsparticles";
 
     // Variables
-	let WavySphere, LaptopObject;
+	let WavySphere, LaptopObject, ShowSidebar;
 	let SiteMounted,
 		MountDesignerTitle,
 		MountEngineerTitle,
@@ -49,6 +49,10 @@
 		// Load the wavy sphere
 		await SetWavySphereScene(WavySphere);
 
+		// Whether to show the sidebar or not
+		ShowSidebar = window.innerHeight > 700;
+		window.addEventListener("resize", () => ShowSidebar = window.innerHeight > 700);
+
 		// Make sure user's not on mobile
 		if (window.innerWidth < 1024) return ToggleMounts();
 
@@ -66,7 +70,7 @@
 
 <!--THREEJS Object Loading Header -->
 <div id="loading-header" class="fade-in">
-	<h2 class="flex justify-items-start mx-60 items-start mt-[40vh] text-white text-3xl font-black tracking-widest">LOADING<mark style="color: #35d0ff; background: none;">&nbsp;3D OBJECTS</mark></h2>
+	<h2 class="flex justify-items-start mx-60 items-start mt-[40vh] text-white text-3xl font-black tracking-widest">LOADING<mark style="color: #38ffff; background: none;">&nbsp;3D OBJECTS</mark></h2>
 	<h2 class="flex justify-items-start mx-60 items-start mt-6 text-white text-xl font-black tracking-widest">This may take awhile..</h2>
 </div>
 
@@ -82,18 +86,18 @@
 <!-- When the site loads -->
 {#if SiteMounted}
 	<!-- Side Menu -->
-	<Sidebar style="z-index: 2;"/>
+	{#if ShowSidebar} <Sidebar style="z-index: 2;"/> {/if}
 
 	<!-- Main Header Content -->
-	<div class="mb-10 ml-32 mt-36 lg:ml-44 2xl:ml-64 2xl:mt-48 3xl:mt-56 3xl:ml-72 relative" style="z-index: 2;">
+	<div class="mb-10 ml-[17vw] 2xl:ml-64 3xl:ml-72 mt-36 2xl:mt-48 3xl:mt-56 relative" style="z-index: 2;">
 
 		<!-- Tristan Simpson Header -->
-		<h2 class="font-black text-xl xl:text-2xl text-gray-300" style="letter-spacing: 8px;" in:fade={{ delay: 300, duration: 1000 }}>
+		<h2 class="font-black text-xl xl:text-2xl text-gray-300 tracking-[8px]" in:fade={{ delay: 300, duration: 1000 }}>
 			TRISTAN SIMPSON
 		</h2>
 
 		<!-- Developer Header -->
-		<h2 class="font-black text-7xl xl:text-[7rem] 2xl:text-9xl text-white tracking-widest mt-10" in:fade={{ delay: 1800, duration: 1000 }}>
+		<h2 class="font-black text-6xl lg:text-[7vw] 2xl:text-9xl text-white tracking-widest mt-[1vw]" in:fade={{ delay: 1800, duration: 1000 }}>
 			Developer
 		</h2>
 
@@ -125,7 +129,7 @@
 {/if}
 
 <!-- The 3D Laptop -->
-<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block lg:-mt-16 xl:-mt-2 2xl:mt-10 3xl:mt-1 ml-[28vw] 2xl:ml-[30vw] 3xl:ml-[26vw]" style="z-index: 2;"/>
+<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block lg:-mt-[10vw] xl:-mt-[5vh] 2xl:mt-[7vh] 3xl:mt-1 ml-[28vw] 2xl:ml-[30vw] 3xl:ml-[26vw]" style="z-index: 2;"/>
 
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 1;"/>
