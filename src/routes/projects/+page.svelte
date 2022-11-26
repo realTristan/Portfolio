@@ -3,58 +3,57 @@
 </svelte:head>
 
 <script>
-    // Imports
+    // Library Imports
+    import { SetWavySphereScene } from "$lib/Imports.js";
     import { onMount, onDestroy } from "svelte";
     import { fade } from 'svelte/transition';
-    import { setScene } from '$lib/wavySphere.js';
 
     // Variables
+    let WavySphere = undefined;
+    let ScrollInterval = null;
     let SiteMounted = false;
-    let wavySphere;
-    let repos = [];
-    let interval = null;
-    onDestroy(async () => clearInterval(interval));
+    let Repos = [];
 
-    // On Page Mount
+    // On Page Mount/Destroy
+    onDestroy(async () => clearInterval(ScrollInterval));
     onMount(async () => {
         // Initialize the scene and the page contents
         SiteMounted = true;
-        await setScene(wavySphere);
+        await SetWavySphereScene(WavySphere);
 
         // Get 'realTristan' Github Data
         await self.fetch("https://api.github.com/users/realTristan/repos")
             .then(response => response.json())
-            .then(json => repos = [...repos, ...json])
+            .then(json => Repos = [...Repos, ...json])
             .catch(error => console.log(error));
-        
         
         // Get 'Simpson Computer Technologies Research' Github Data
         await self.fetch("https://api.github.com/users/Simpson-Computer-Technologies-Research/repos")
             .then(response => response.json())
-            .then(json => repos = [...repos, ...json])
+            .then(json => Repos = [...Repos, ...json])
             .catch(error => console.log(error));
             
 
         // Scroll wheel action event listener. Don't use if on mobile!
         if (!navigator.userAgentData.mobile) {
             // Auto Scroll intervals and variables
-            let autoScroll = false;
-            interval = window.setInterval(async () => autoScroll?window.scrollBy(0, 5) :0, 15)
-            setTimeout(async () => autoScroll = true, 4000);
+            let AutoScroll = false;
+            ScrollInterval = window.setInterval(async () => AutoScroll ? window.scrollBy(0, 5) : 0, 15)
+            setTimeout(async () => AutoScroll = true, 4000);
 
             // Scroll timeouts
-            let timeout = null;
+            let Timeout = null;
             document.addEventListener('wheel', (_) => {
-                if (autoScroll) autoScroll = false;
+                if (AutoScroll) AutoScroll = false;
 
                 // After two seconds of not scrolling, auto scroll again
-                clearTimeout(timeout);
-                timeout = setTimeout(async () => autoScroll = true, 5000);
+                clearTimeout(Timeout);
+                Timeout = setTimeout(async () => AutoScroll = true, 5000);
             });
         }
     });
 </script>
-<svelte:window on:beforeunload={clearInterval(interval)}/> 
+<svelte:window on:beforeunload={clearInterval(ScrollInterval)}/> 
 
 <!-- Background Gradient -->
 <div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
@@ -105,7 +104,7 @@
 
     <!-- Github Repositories -->
     <div class="lg:flex justify-center lg:justify-end" style="z-index: -1;"><div>
-        {#each repos as data, i}
+        {#each Repos as data, i}
             <div class="group my-20 translate-y-0 hover:-translate-y-8 duration-[400ms] ease-in-out lg:mr-10 mx-28 lg:mx-0 w-[20rem] md:w-[40rem] 2xl:w-[50rem]" in:fade={{ delay: 2200+(250*i), duration: 1000 }}>
                 <a href={data.html_url} rel="noopener noreferrer" target="_blank" class="mb-48 h-64 px-10 pt-6 rounded-[2.5rem] tracking-widest shadow-[#202020]">
                     <h2 class="text-white text-center text-xl font-black">
@@ -126,4 +125,4 @@
 {/if}
 
 <!-- The 3D Wave Sphere -->
-<canvas bind:this={wavySphere} style="top: 0px; right: 0px; z-index: -1; position: fixed;"/>
+<canvas bind:this={WavySphere} style="top: 0px; right: 0px; z-index: -1; position: fixed;"/>
