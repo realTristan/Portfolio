@@ -1,0 +1,556 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.3.32",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                10
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Laptop_body_NakedSingularity_MI_laptop_01_0"
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "Laptop_body_NakedSingularity"
+        },
+        {
+            "name" : "Laptop_optical_drive_NakedSingularity"
+        },
+        {
+            "mesh" : 1,
+            "name" : "Laptop_screen_NakedSingularity_MI_laptop_01_0"
+        },
+        {
+            "mesh" : 2,
+            "name" : "Laptop_screen_NakedSingularity_MI_laptop_01_glass_0"
+        },
+        {
+            "mesh" : 3,
+            "name" : "Laptop_screen_NakedSingularity_MI_laptop_01_screen_0"
+        },
+        {
+            "children" : [
+                3,
+                4,
+                5
+            ],
+            "name" : "Laptop_screen_NakedSingularity",
+            "translation" : [
+                -18.104793548583984,
+                0.9836483597755432,
+                -12.299805641174316
+            ]
+        },
+        {
+            "children" : [
+                1,
+                2,
+                6
+            ],
+            "name" : "RootNode"
+        },
+        {
+            "children" : [
+                7
+            ],
+            "name" : "Object_2"
+        },
+        {
+            "children" : [
+                8
+            ],
+            "name" : "Laptop_NakedSingularity.fbx",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.010000000707805157,
+                0.010000000707805157
+            ]
+        },
+        {
+            "children" : [
+                9
+            ],
+            "name" : "Sketchfab_model",
+            "rotation" : [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "emissiveTexture" : {
+                "index" : 0
+            },
+            "name" : "MI_laptop_01",
+            "normalTexture" : {
+                "index" : 1
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 3
+                },
+                "roughnessFactor" : 0.699999988079071
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "MI_laptop_01_glass",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.0065982760861516,
+                    0.0065982760861516,
+                    0.0065982760861516,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "MI_laptop_01_screen",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 4
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Laptop_body_NakedSingularity_MI_laptop_01_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Laptop_screen_NakedSingularity_MI_laptop_01_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7,
+                        "TEXCOORD_1" : 8
+                    },
+                    "indices" : 9,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Laptop_screen_NakedSingularity_MI_laptop_01_glass_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 10,
+                        "NORMAL" : 11,
+                        "TEXCOORD_0" : 12,
+                        "TEXCOORD_1" : 13
+                    },
+                    "indices" : 14,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "Laptop_screen_NakedSingularity_MI_laptop_01_screen_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 15,
+                        "NORMAL" : 16,
+                        "TEXCOORD_0" : 17,
+                        "TEXCOORD_1" : 18
+                    },
+                    "indices" : 19,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        },
+        {
+            "sampler" : 0,
+            "source" : 4
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MI_laptop_01_emissive",
+            "uri" : "./textures/MI_laptop_01_emissive.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MI_laptop_01_normal",
+            "uri" : "./textures/MI_laptop_01_normal.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MI_laptop_01_baseColor",
+            "uri" : "./textures/MI_laptop_01_baseColor.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MI_laptop_01_metallicRoughness",
+            "uri" : "./textures/MI_laptop_01_metallicRoughness.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MI_laptop_01_screen_baseColor",
+            "uri" : "./textures/versa_wallpaper.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 7804,
+            "max" : [
+                18.947221755981445,
+                1.9264912605285645,
+                13.026018142700195
+            ],
+            "min" : [
+                -18.947221755981445,
+                -0.0418219268321991,
+                -12.966507911682129
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 7804,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 7804,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 7804,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 14607,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 1335,
+            "max" : [
+                37.04344940185547,
+                24.93751335144043,
+                0.649336040019989
+            ],
+            "min" : [
+                -0.8338623046875,
+                -0.8055487275123596,
+                -4.898809432983398
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 1335,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 1335,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 1335,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5123,
+            "count" : 1974,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 6,
+            "max" : [
+                18.468101501464844,
+                24.58981704711914,
+                -4.171293258666992
+            ],
+            "min" : [
+                17.741485595703125,
+                23.87091064453125,
+                -4.276851654052734
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5126,
+            "count" : 6,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 6,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 6,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5123,
+            "count" : 6,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5126,
+            "count" : 72,
+            "max" : [
+                35.4024772644043,
+                23.468908309936523,
+                -1.3961867094039917
+            ],
+            "min" : [
+                0.8071098327636719,
+                4.0311360359191895,
+                -4.219850540161133
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 72,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 72,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 72,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5123,
+            "count" : 72,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 93648,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 93648,
+            "byteOffset" : 93648,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 62432,
+            "byteOffset" : 187296,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 62432,
+            "byteOffset" : 249728,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 29214,
+            "byteOffset" : 312160,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16020,
+            "byteOffset" : 341376,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16020,
+            "byteOffset" : 357396,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10680,
+            "byteOffset" : 373416,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10680,
+            "byteOffset" : 384096,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3948,
+            "byteOffset" : 394776,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 72,
+            "byteOffset" : 398724,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 72,
+            "byteOffset" : 398796,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 398868,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 398916,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 398964,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 864,
+            "byteOffset" : 398976,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 864,
+            "byteOffset" : 399840,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 400704,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 576,
+            "byteOffset" : 401280,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 144,
+            "byteOffset" : 401856,
+            "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 402000,
+            "uri" : "laptop.bin"
+        }
+    ]
+}
