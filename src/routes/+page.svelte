@@ -81,9 +81,6 @@
 
 <!-- When the site loads -->
 {#if SiteMounted}
-	<!-- Particles -->
-	<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -1;"/>
-
 	<!-- Side Menu -->
 	<Sidebar style="z-index: 2;"/>
 
@@ -116,15 +113,15 @@
 
 	<!-- Main Projects -->
 	<div id="projects"></div>
-	<div class="ml-44 mt-[10rem]">
+	<section class="ml-44 mt-40" style="z-index: 2; position: relative;">
 		<MainProjects/>
-	</div>
+	</section>
 
 	<!-- About Me -->
 	<div id="about"></div>
-	<div class="ml-44 mt-[10rem]">
+	<section class="ml-44 mt-40" style="z-index: 2; position: relative;">
 		<AboutMe/>
-	</div>
+	</section>
 {/if}
 
 <!-- The 3D Laptop -->
@@ -132,3 +129,6 @@
 
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 1;"/>
+
+<!-- Particles -->
+<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -2;"/>
