@@ -50,8 +50,8 @@
 		await SetWavySphereScene(WavySphere);
 
 		// Whether to show the sidebar or not
-		ShowSidebar = window.innerHeight > 700;
-		window.addEventListener("resize", () => ShowSidebar = window.innerHeight > 700);
+		ShowSidebar = window.innerHeight > 650;
+		window.addEventListener("resize", () => ShowSidebar = window.innerHeight > 650);
 
 		// Make sure user's not on mobile
 		if (window.innerWidth < 1024) return ToggleMounts();
@@ -89,7 +89,7 @@
 	{#if ShowSidebar} <Sidebar/> {/if}
 
 	<!-- Main Header Content -->
-	<div class="mb-10 ml-[17vw] 2xl:ml-64 3xl:ml-72 mt-36 2xl:mt-48 3xl:mt-56 relative" style="z-index: 2;">
+	<div class="mb-10 ml-32 md:ml-[17vw] 2xl:ml-64 3xl:ml-72 mt-36 2xl:mt-48 3xl:mt-56 relative" style="z-index: 2;">
 
 		<!-- Tristan Simpson Header -->
 		<h2 class="font-black text-xl xl:text-2xl text-gray-300 tracking-[8px]" in:fade={{ delay: 300, duration: 1000 }}>

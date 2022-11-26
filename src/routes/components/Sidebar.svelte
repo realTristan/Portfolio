@@ -4,7 +4,7 @@
 </script>
 
 <!-- Sidebar Items -->
-<div class="hidden lg:block top-40 fixed" style="z-index: 2;" in:fade={{ delay: 300, duration: 2000 }}>
+<div class="hidden lg:block ml-1 top-36 fixed" style="z-index: 2;" in:fade={{ delay: 300, duration: 2000 }}>
     {#if showSidebar}
         <div class="group mb-32 -rotate-90">
             <a class="text-sm font-bold text-gray-200 tracking-[0.2rem]" href="/#projects">PROJECTS</a>
