@@ -47,12 +47,8 @@ const animate = async () => {
 // This is required for if the user resizes the site,
 // which is caught using the Window Resize Listener
 export const resize = async () => {
-	// Set the pixel ratio
-	Renderer.setPixelRatio(window.devicePixelRatio);
 	// Set the screen size
 	Renderer.setSize(window.innerWidth, window.innerHeight);
-	// Set the camera aspect ratio (most likely 16:9)
-	CAMERA.aspect = window.innerWidth / window.innerHeight;
 	// Update projection matrix
 	CAMERA.updateProjectionMatrix();
 };
@@ -69,6 +65,8 @@ export const SetWavySphereScene = async (canvas) => {
 		powerPreference: "high-performance", 
 		antialias: true
 	});
+	Renderer.setPixelRatio(window.devicePixelRatio);
+	
 	// Size the scene
 	await resize();
 	// Animate the sphere

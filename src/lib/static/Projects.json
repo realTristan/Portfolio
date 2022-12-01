@@ -15,17 +15,17 @@
             "visible": false
         },
         {
-            "title": "class.io",
-            "description": "An Easy-to-use Advanced Classroom built with Svelte, Rust and Tailwind CSS",
-            "image": "https://user-images.githubusercontent.com/75189508/193428491-28348d48-5a33-4975-8dfa-9c339f8f9db4.PNG",
-            "href": "https://github.com/realTristan/class.io",
+            "title": "Better Cache",
+            "description": "Better Cache is an Easy-to-use Modern Caching System with Full-Text Functionalities",
+            "image": "https://cdn.discordapp.com/attachments/855448636880191499/1046740898865745950/186757681-6b7f97e8-ec37-448a-83cc-75106ed16309.png",
+            "href": "https://github.com/realTristan/bettercache",
             "visible": false
         }
     ],
     [
         {
             "title": "uwaterloo.courses",
-            "description": "Ultra Fast Course Catalog for the University of Waterloo built with Svelte, Golang and Redis",
+            "description": "Ultra Fast Course Catalog for the University of Waterloo built with Svelte, Golang and Tailwind CSS",
             "image": "https://user-images.githubusercontent.com/75189508/186290354-a5ed2710-f1a5-43c8-ae19-c0252d874fa3.png",
             "href": "https://github.com/realTristan/uwaterloo.courses",
             "visible": false

@@ -83,7 +83,6 @@
         <div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
     </div>
 
-
     <!-- Sidebar Items -->
     <div class="hidden lg:block top-36 ml-8 fixed" in:fade={{ delay: 300, duration: 2000 }}>
         <div class="group mb-32 -rotate-90">

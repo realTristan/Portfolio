@@ -20,11 +20,13 @@ export const LoadLaptopObject = async (Loader, Scene, Wallpaper) => Loader.load(
 	Scene.add(model);
 
 	// Resize the models with the screen size
-	const resize = async () => {
-		if (window.innerWidth > 1500) model.scale.set(3, 3, 3);
-		else {
-			const SIZE = window.innerWidth / 600;
-			model.scale.set(SIZE, SIZE, SIZE);
+	const resize = () => {
+		if (window.innerWidth > 1536) {
+			model.scale.set(2.75, 2.75, 2.75);
+		} else if (window.innerWidth > 1280 && window.innerWidth < 1536) {
+			model.scale.set(2.3, 2.3, 2.3);
+		} else {
+			model.scale.set(1.9, 1.9, 1.9);
 		}
 	}
 	resize();

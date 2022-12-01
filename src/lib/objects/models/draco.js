@@ -5,5 +5,3 @@ export const DRACO_LOADER = new DRACOLoader()
 DRACO_LOADER.setDecoderConfig({ type: 'js' });
 DRACO_LOADER.setDecoderPath('/draco/');
 DRACO_LOADER.preload();
-
-// .\gltfpack.exe -i laptop.glb -o laptop2.glb -d -b
