@@ -125,7 +125,7 @@
 {/if}
 
 <!-- The 3D Laptop -->
-<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block ml-[28vw] -mt-36 xl:-mt-28 2xl:-mt-6" style="z-index: 2;"/>
+<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block ml-[28vw] -mt-40 xl:-mt-28 2xl:-mt-6" style="z-index: 2;"/>
 
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 1;"/>

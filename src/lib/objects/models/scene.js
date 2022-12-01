@@ -1,8 +1,5 @@
 import { OrbitControls, THREE } from "$lib/Imports.js";
 
-// The original screen height
-const SCREEN_HEIGHT = window.innerHeight;
-
 // The SetModelScene() function is the primary function
 // for updating the sphere's scene data.
 export const SetModelScene = async (canvas) => {
@@ -16,7 +13,7 @@ export const SetModelScene = async (canvas) => {
 	SCENE.add(POINT_LIGHTING);
 
 	// Camera
-	const CAMERA = new THREE.PerspectiveCamera(20, window.innerWidth / SCREEN_HEIGHT, 1, 1000);
+	const CAMERA = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 1000);
 	CAMERA.position.set(3, -0.5, 4);
 	SCENE.add(CAMERA);
 
@@ -28,9 +25,9 @@ export const SetModelScene = async (canvas) => {
 	// which is caught using the Window Resize Listener
 	const resize = () => {
 		// Set the screen size
-		Renderer.setSize(window.innerWidth, SCREEN_HEIGHT);
-		// Set the camera aspect ratio (most likely 16:9)
-		CAMERA.aspect = window.innerWidth / SCREEN_HEIGHT;
+		Renderer.setSize(window.innerWidth, 900);
+		// Set the camera aspect ratio
+		CAMERA.aspect = window.innerWidth / 900;
 		// Update projection matrix
 		CAMERA.updateProjectionMatrix();
 	};
