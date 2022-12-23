@@ -18,6 +18,7 @@
 	import SubHeader from "./components/SubHeader.svelte";
 	import AboutMe from './components/AboutMe.svelte';
 	import Sidebar from "./components/Sidebar.svelte";
+	import Github from "./components/Github.svelte";
 
 	// Particles imports
 	import * as ParticleData from '$lib/static/particles.json';
@@ -33,7 +34,9 @@
 
 	// Function to toggle the mounts
 	const ToggleMounts = () => {
-		document.getElementById("loading-header").classList.add("hidden", "fade-out");
+		document.getElementById("loading-header")
+			.classList
+			.add("hidden", "fade-out");
 
 		// Default Mounts
 		SiteMounted = true;
@@ -117,15 +120,17 @@
 		<MainProjects/>
 	</section>
 
+	<!-- Github -->
+	<section class="ml-36 md:ml-44 mt-40" style="z-index: 2; position: relative;">
+		<Github LaptopObject={LaptopObject}/>
+	</section>
+
 	<!-- About Me -->
 	<div id="about"></div>
 	<section class="ml-36 md:ml-44 mt-40" style="z-index: 2; position: relative;">
 		<AboutMe/>
 	</section>
 {/if}
-
-<!-- The 3D Laptop -->
-<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block ml-[28vw] -mt-40 xl:-mt-28 2xl:-mt-6" style="z-index: 2;"/>
 
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 1;"/>
