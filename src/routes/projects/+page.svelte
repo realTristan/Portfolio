@@ -22,13 +22,13 @@
         await SetWavySphereScene(WavySphere);
 
         // Get 'realTristan' Github Data
-        await self.fetch("https://api.github.com/users/realTristan/repos")
+        await self.fetch("https://api.github.com/users/realTristan/repos?per_page=100")
             .then(response => response.json())
             .then(json => Repos = [...Repos, ...json])
             .catch(error => console.log(error));
         
         // Get 'Simpson Computer Technologies Research' Github Data
-        await self.fetch("https://api.github.com/users/Simpson-Computer-Technologies-Research/repos")
+        await self.fetch("https://api.github.com/users/Simpson-Computer-Technologies-Research/repos?per_page=100")
             .then(response => response.json())
             .then(json => Repos = [...Repos, ...json])
             .catch(error => console.log(error));
