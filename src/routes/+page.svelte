@@ -137,6 +137,7 @@
 	<section class="ml-36 md:ml-44 mt-40" style="z-index: 2; position: relative;">
 		<AboutMe/>
 	</section>
+	<div class="h-40"></div>
 {/if}
 
 <!-- The 3D Laptop -->
