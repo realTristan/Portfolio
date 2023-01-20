@@ -30,7 +30,8 @@
 	let SiteMounted,
 		MountDesignerTitle,
 		MountEngineerTitle,
-		MountEnthusiastTitle = false;
+		MountEnthusiastTitle,
+		LaptopObjectLoaded = false;
 
 	// Function to toggle the mounts
 	const ToggleMounts = () => {
@@ -64,7 +65,8 @@
 
 		// Load the laptop model
 		let LaptopModelScene = await SetModelScene(LaptopObject);
-		await LoadLaptopObject(Loader, LaptopModelScene, Textures.GithubWallpaper);
+		await LoadLaptopObject(Loader, LaptopModelScene, Textures.GithubWallpaper)
+			.then(() => LaptopObjectLoaded = true);
 	});
 </script>
 
@@ -121,9 +123,14 @@
 	</section>
 
 	<!-- Github -->
-	<section class="ml-36 md:ml-44 mt-40" style="z-index: 2; position: relative;">
-		<Github LaptopObject={LaptopObject}/>
-	</section>
+	{#if LaptopObjectLoaded}
+		<section class="ml-36 md:ml-44 mt-64" style="z-index: 2; position: relative;">
+			<Github/>
+		</section>
+	{/if}
+
+	<!-- Seperator -->
+	<div class="md:h-[100px] lg:h-[150px]"></div>
 
 	<!-- About Me -->
 	<div id="about"></div>
@@ -132,8 +139,11 @@
 	</section>
 {/if}
 
+<!-- The 3D Laptop -->
+<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block ml-[26vw] mt-[1867px] xl:mt-[1980px] 2xl:mt-[2100px]" style="z-index: 2;"/>
+
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 1;"/>
 
 <!-- Particles -->
-<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)} style="z-index: -2;"/>
+<Particles options={ ParticleData } particlesInit={(e) => loadFull(e)}/>

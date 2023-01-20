@@ -1,7 +1,6 @@
 <script>
     let headerInView = false;
     let observer;
-    export let LaptopObject;
 
     function viewport(e) {
         if (observer) return;
@@ -24,12 +23,14 @@
         headerInView = true;
     }}
 >
-    <a class="text-white text-4xl font-black tracking-widest">GITHUB</a>
+    <a href="https://github.com/realTristan"class="text-white text-4xl font-black tracking-widest">GITHUB</a>
     <div class="bg-[#38ffff] h-1 mt-2 rounded-full {headerInView?'w-24':'w-0'} duration-[2000ms] ease-in-out"></div>
-    <div class="mt-16">
-        <div class="lg:flex mt-12 mr-20 w-[32rem] lg:w-auto">
-            <h2 class="text-white text-center text-xl font-black">Coming Soon</h2>
-            <canvas bind:this={ LaptopObject } class="" style="z-index: 2;"/>
-        </div>
+    <div class="flex mt-6 mb-12 ml-4 flex-wrap w-[23rem] xl:w-[30rem] 2xl:w-[40rem]">
+        <h2 class="text-gray-300 mb-10 mr-1 text-left text-xl leading-relaxed xl:text-2xl tracking-widest xl:leading-loose">
+            Throughout my four year pursuit in computer science and engineering, I developed a diverse portfolio of both projects and proficiencies. My Github is home to over 30 of these projects.
+        </h2>
+        <h2 class="text-gray-300 mb-4 mr-1 text-left text-xl leading-relaxed xl:text-2xl tracking-widest xl:leading-loose">
+            I look forward to expanding my portfolio even further.
+        </h2>
     </div>
 </div>

@@ -14,6 +14,7 @@ export const LoadLaptopObject = async (Loader, Scene, Wallpaper) => Loader.load(
 			obj.material.needsUpdate = true;
 		};
 	});
+	
 	// Update the model position and rotation
 	model.position.set(0, -0.2, 0);
 	model.rotation.set(0.1, 0, 0);
