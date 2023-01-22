@@ -15,7 +15,7 @@
             "visible": false
         },
         {
-            "title": "BetterCache",
+            "title": "Better Cache",
             "description": "BetterCache is an easy-to-use modern caching system with full-text functionalities",
             "image": "https://cdn.discordapp.com/attachments/855448636880191499/1046740898865745950/186757681-6b7f97e8-ec37-448a-83cc-75106ed16309.png",
             "href": "https://github.com/realTristan/bettercache",
@@ -32,7 +32,7 @@
         },
         {
             "title": "Athena",
-            "description": "Athena is an advanced discord matchmaking bot with fully functional caching and database systems, dozens of commands, and more!",
+            "description": "Athena is a discord matchmaking bot with fully functional caching and database systems, dozens of commands, and more!",
             "image": "https://cdn.discordapp.com/attachments/855448636880191499/1065960252119449650/Capture.PNG",
             "href": "https://github.com/realTristan/Athena",
             "visible": false
