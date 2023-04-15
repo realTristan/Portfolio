@@ -1,13 +1,13 @@
-import * as THREE from 'three';
-import noise from 'simplenoise';
+import * as THREE from "three";
+import noise from "simplenoise";
 
 // Establish a new scene
 const SCENE: THREE.Scene = new THREE.Scene();
 
 // Establish a new Sphere then add it to the scene
 const SPHERE: THREE.Mesh = new THREE.Mesh(
-	new THREE.SphereGeometry(1, 75, 75), 
-	new THREE.MeshDepthMaterial()
+  new THREE.SphereGeometry(1, 75, 75),
+  new THREE.MeshDepthMaterial()
 );
 SCENE.add(SPHERE);
 SPHERE.position.set(1.3, 0.4);
@@ -24,52 +24,52 @@ let Renderer: THREE.WebGLRenderer;
 // adding noise to it's vertices which in return gives it
 // that wavy kind of look.
 const animate = async () => {
-	requestAnimationFrame(animate);
+  requestAnimationFrame(animate);
 
-	// The Sphere's "Wave" Variables
-	const SPEED: number = performance.now() * 0.001;
+  // The Sphere's "Wave" Variables
+  const SPEED: number = performance.now() * 0.001;
 
-	// Iterate over the spheres vertices
-	for (let i = 500; i < SPHERE.geometry.vertices.length; i++) {
-		let v = SPHERE.geometry.vertices[i];
-		// Use the noise.perlin3 function to create the "wavy" look.
-		// '3' is the number of 'waves'
-		v.normalize().multiplyScalar(
-			1 + 0.3 * noise.perlin3(v.x * 3 + SPEED, v.y * 3, v.z * 3)
-		);
-	}
-	// Update the vertices and render the new sphere
-	SPHERE.geometry.verticesNeedUpdate = true;
-	Renderer.render(SCENE, CAMERA);
+  // Iterate over the spheres vertices
+  for (let i = 500; i < SPHERE.geometry.vertices.length; i++) {
+    let v = SPHERE.geometry.vertices[i];
+    // Use the noise.perlin3 function to create the "wavy" look.
+    // '3' is the number of 'waves'
+    v.normalize().multiplyScalar(
+      1 + 0.3 * noise.perlin3(v.x * 3 + SPEED, v.y * 3, v.z * 3)
+    );
+  }
+  // Update the vertices and render the new sphere
+  SPHERE.geometry.verticesNeedUpdate = true;
+  Renderer.render(SCENE, CAMERA);
 };
 
 // The resize() function is used to resize the scene.
 // This is required for if the user resizes the site,
 // which is caught using the Window Resize Listener
 export const resize = async () => {
-	// Set the screen size
-	Renderer.setSize(window.innerWidth, window.innerHeight);
-	// Update projection matrix
-	CAMERA.updateProjectionMatrix();
+  // Set the screen size
+  Renderer.setSize(window.innerWidth, window.innerHeight);
+  // Update projection matrix
+  CAMERA.updateProjectionMatrix();
 };
 // Window Resize Listener
-window.addEventListener('resize', resize);
+window.addEventListener("resize", resize);
 
 // The SetWavySphereScene() function is the primary function
 // for updating the sphere's scene data.
 export const SetWavySphereScene = async (canvas: any) => {
-	// Render the new scene
-	Renderer = new THREE.WebGLRenderer({
-		canvas: canvas, 
-		alpha: true, 
-		powerPreference: "high-performance", 
-		antialias: true
-	});
-	Renderer.setPixelRatio(window.devicePixelRatio);
-	
-	// Size the scene
-	await resize();
-	
-	// Animate the sphere
-	await animate();
+  // Render the new scene
+  Renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    alpha: true,
+    powerPreference: "high-performance",
+    antialias: true,
+  });
+  Renderer.setPixelRatio(window.devicePixelRatio);
+
+  // Size the scene
+  await resize();
+
+  // Animate the sphere
+  await animate();
 };
