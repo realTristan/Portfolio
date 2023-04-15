@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
     import { fade } from 'svelte/transition';
-	let showSidebar = true;
+	let showSidebar: boolean = true;
 </script>
 
 <!-- Sidebar Items -->

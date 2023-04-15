@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
     import Projects from "$lib/static/Projects.json"
-    let headerInView = false;
-    let observer;
+    let headerInView: boolean = false;
+    let observer: any;
 
-    function viewport(e) {
+    function viewport(e: any): any {
         if (observer) return;
         observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
     // Imports
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
     
     // Hide the mouse button when the user scrolls
-    let showMouse = true;
+    let showMouse: boolean = true;
     onMount(async () => {
-        document.addEventListener('scroll', (_) => {
+        document.addEventListener('scroll', function(this: any) {
             showMouse = false;
             document.removeEventListener('scroll', this);
         });

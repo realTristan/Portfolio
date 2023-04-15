@@ -1,8 +1,8 @@
-<script>
-    let headerInView = false;
-    let observer;
+<script lang="ts">
+    let headerInView: boolean = false;
+    let observer: any;
 
-    function viewport(e) {
+    function viewport(e: any): any {
         if (observer) return;
         observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -19,8 +19,9 @@
 <!-- Contents -->
 <div use:viewport class="{headerInView?'opacity-1 -translate-y-8':'opacity-0 -translate-y-0'} duration-[3000ms] ease-in-out mt-20"
     on:enterViewport={() => {
-        if (headerInView) return;
-        headerInView = true;
+        if (!headerInView) {
+            headerInView = true;
+        }
     }}
 >
     <a href="https://github.com/realTristan"class="text-white text-4xl font-black tracking-widest">GITHUB</a>

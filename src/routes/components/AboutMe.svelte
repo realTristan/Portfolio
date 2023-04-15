@@ -1,18 +1,18 @@
-<script>
+<script lang="ts">
     // Import each of the summaries
     import summary1 from "$lib/static/Summary1.txt?raw"
     import summary2 from "$lib/static/Summary2.txt?raw"
 
     // Control word fade speed
-    let wordFadeInterval = 400;
+    let wordFadeInterval: number = 400;
 
     // Store the summary words in a list
-    let summary1Words = setSummaryData(summary1.split(" "),[{visible:false,word:"Hi,",delay: 0}])
-    let summary2Words = setSummaryData(summary2.split(" "), [])
+    let summary1Words: any[] = setSummaryData(summary1.split(" "),[{visible:false,word:"Hi,",delay: 0}])
+    let summary2Words: any[] = setSummaryData(summary2.split(" "), [])
 
     // Function to set the append the words in the summary along
     // with their corresponding visibility status and appearance delay
-    function setSummaryData(SummaryConstant, summaryWordsArray) {
+    function setSummaryData(SummaryConstant: string[], summaryWordsArray: any[]): any[] {
         // Add The About Me Summary Word Animations
         for (let i = 1; i < SummaryConstant.length; i++) {
             // If previous split was the end of a sentance
@@ -32,11 +32,11 @@
     }
 
     // Page Observer Viewport Variables
-    let headerInView = false;
-    let observer;
+    let headerInView: boolean = false;
+    let observer: any;
 
     // Page Observer Viewport Function
-    function viewport(e) {
+    function viewport(e: any): any {
         if (observer) return;
         observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Library Imports
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
@@ -10,7 +10,7 @@
 		GLTFLoader, 
 		THREE, 
 		DRACO_LOADER 
-	} from "$lib/Imports.js";
+	} from "$lib/imports";
 
 	// Import Components
 	import MouseButton from './components/MouseButton.svelte';
@@ -26,18 +26,17 @@
 	import { loadFull } from "tsparticles";
 
     // Variables
-	let WavySphere, LaptopObject;
-	let SiteMounted,
-		MountDesignerTitle,
-		MountEngineerTitle,
-		MountEnthusiastTitle,
-		LaptopObjectLoaded = false;
+	let WavySphere: any, LaptopObject: any;
+	let SiteMounted: boolean,
+		MountDesignerTitle: boolean,
+		MountEngineerTitle: boolean,
+		MountEnthusiastTitle: boolean,
+		LaptopObjectLoaded: boolean = false;
 
 	// Function to toggle the mounts
 	const ToggleMounts = () => {
-		document.getElementById("loading-header")
-			.classList
-			.add("hidden", "fade-out");
+		let doc: any = document.getElementById("loading-header");
+		doc.classList.add("hidden", "fade-out");
 
 		// Default Mounts
 		SiteMounted = true;
@@ -59,7 +58,7 @@
 		// 3D Object Loader
 		const Loader = new GLTFLoader(new THREE.LoadingManager(
 			onload = () => ToggleMounts(),
-			onprogress = (obj) => console.log(`Object Loaded: ${obj}`)
+			onprogress = (obj: any) => console.log(`Object Loaded: ${obj}`)
 		));
 		Loader.setDRACOLoader(DRACO_LOADER);
 

@@ -2,17 +2,17 @@
 	<title>Tristan Simpson - Projects</title>
 </svelte:head>
 
-<script>
+<script lang="ts">
     // Library Imports
-    import { SetWavySphereScene } from "$lib/Imports.js";
+    import { SetWavySphereScene } from "$lib/imports";
     import { onMount, onDestroy } from "svelte";
     import { fade } from 'svelte/transition';
 
     // Variables
-    let WavySphere = undefined;
-    let ScrollInterval = null;
-    let SiteMounted = false;
-    let Repos = [];
+    let WavySphere: any = undefined;
+    let ScrollInterval: any = null;
+    let SiteMounted: boolean = false;
+    let Repos: any[] = [];
 
     // On Page Mount/Destroy
     onDestroy(async () => clearInterval(ScrollInterval));
@@ -35,25 +35,24 @@
             
 
         // Scroll wheel action event listener. Don't use if on mobile!
-        if (!navigator.userAgentData.mobile) {
+        if (!navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i)) {
             // Auto Scroll intervals and variables
             let AutoScroll = false;
             ScrollInterval = window.setInterval(async () => AutoScroll ? window.scrollBy(0, 5) : 0, 15)
             setTimeout(async () => AutoScroll = true, 4000);
 
             // Scroll timeouts
-            let Timeout = null;
+            let timeout: any = null;
             document.addEventListener('wheel', (_) => {
                 if (AutoScroll) AutoScroll = false;
 
                 // After two seconds of not scrolling, auto scroll again
-                clearTimeout(Timeout);
-                Timeout = setTimeout(async () => AutoScroll = true, 5000);
+                clearTimeout(timeout);
+                timeout = setTimeout(async () => AutoScroll = true, 5000);
             });
         }
     });
 </script>
-<svelte:window on:beforeunload={clearInterval(ScrollInterval)}/> 
 
 <!-- Background Gradient -->
 <div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>

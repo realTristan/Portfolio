@@ -2,10 +2,10 @@ import * as THREE from 'three';
 import noise from 'simplenoise';
 
 // Establish a new scene
-const SCENE = new THREE.Scene();
+const SCENE: THREE.Scene = new THREE.Scene();
 
 // Establish a new Sphere then add it to the scene
-const SPHERE = new THREE.Mesh(
+const SPHERE: THREE.Mesh = new THREE.Mesh(
 	new THREE.SphereGeometry(1, 75, 75), 
 	new THREE.MeshDepthMaterial()
 );
@@ -14,11 +14,11 @@ SPHERE.position.set(1.3, 0.4);
 SPHERE.rotation.set(2, 1, 2);
 
 // Establish a new perspective camera and set it's position
-const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const CAMERA: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 CAMERA.position.z = 1.5;
 
 // Establish an empty renderer for later use
-let Renderer;
+let Renderer: THREE.WebGLRenderer;
 
 // The animate() function is used to manipulate the sphere,
 // adding noise to it's vertices which in return gives it
@@ -27,7 +27,7 @@ const animate = async () => {
 	requestAnimationFrame(animate);
 
 	// The Sphere's "Wave" Variables
-	const SPEED = performance.now() * 0.001;
+	const SPEED: number = performance.now() * 0.001;
 
 	// Iterate over the spheres vertices
 	for (let i = 500; i < SPHERE.geometry.vertices.length; i++) {
@@ -57,7 +57,7 @@ window.addEventListener('resize', resize);
 
 // The SetWavySphereScene() function is the primary function
 // for updating the sphere's scene data.
-export const SetWavySphereScene = async (canvas) => {
+export const SetWavySphereScene = async (canvas: any) => {
 	// Render the new scene
 	Renderer = new THREE.WebGLRenderer({
 		canvas: canvas, 
@@ -69,6 +69,7 @@ export const SetWavySphereScene = async (canvas) => {
 	
 	// Size the scene
 	await resize();
+	
 	// Animate the sphere
 	await animate();
 };

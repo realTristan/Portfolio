@@ -1,24 +1,24 @@
-import { OrbitControls, THREE } from "$lib/Imports.js";
+import { OrbitControls, THREE } from "$lib/imports";
 
 // The SetModelScene() function is the primary function
 // for updating the sphere's scene data.
 export const SetModelScene = async (canvas) => {
 	// Establish a new scene
-	const SCENE = new THREE.Scene();
+	const SCENE: THREE.Scene = new THREE.Scene();
 	SCENE.add(new THREE.AmbientLight("#FFFFFF", 0.5));
 
 	// Point Lighting
-	const POINT_LIGHTING = new THREE.PointLight();
+	const POINT_LIGHTING: THREE.PointLight = new THREE.PointLight();
 	POINT_LIGHTING.position.set(1, 0, 1);
 	SCENE.add(POINT_LIGHTING);
 
 	// Camera
-	const CAMERA = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 1000);
+	const CAMERA: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 1000);
 	CAMERA.position.set(3, -0.5, 4);
 	SCENE.add(CAMERA);
 
 	// Establish Renderer and Controls Variables
-	let Renderer, Controls;
+	let Renderer: THREE.WebGLRenderer, Controls: OrbitControls;
 
 	// The resize() function is used to resize the scene.
 	// This is required for if the user resizes the site,
