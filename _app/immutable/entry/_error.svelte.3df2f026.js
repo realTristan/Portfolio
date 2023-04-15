@@ -1,0 +1,1 @@
+import{S as i,i as s,s as t,o as e}from"../chunks/index.c10d3ee8.js";function a(o){return e(()=>{const n=window.location.href.split("/")[3];n!=null?window.location.assign(window.location.origin+"/search?query="+n):window.location.assign(window.location.origin)}),[]}class l extends i{constructor(n){super(),s(this,n,a,null,t,{})}}export{l as default};
