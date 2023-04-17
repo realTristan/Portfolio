@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* Smooth Scroll */
-html, body, * { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
 
 /* Basic Fading Animations */
 .fade-out { animation: fade_out 1s; opacity: 0; }

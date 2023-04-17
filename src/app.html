@@ -8,7 +8,9 @@
 		<meta name="description" content="Tristan Simpson's Portfolio" />
 		%sveltekit.head%
 	</head>
-	<div style="background-color: #101010; height: 3200px; overflow-x: hidden;">
-		%sveltekit.body%
-	</div>
+	<body data-sveltekit-preload-data="hover">
+		<div style="background-color: #101010; height: 3200px; overflow-y: hidden;">
+			%sveltekit.body%
+		</div>
+	</body>
 </html>
