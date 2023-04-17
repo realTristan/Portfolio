@@ -21,7 +21,7 @@
 	import Github from "./components/Github.svelte";
 
 	// Particles imports
-	import * as ParticleData from '$lib/static/particles.json';
+	import * as ParticleData from '$lib/assets/particles.json';
 	import Particles from "svelte-particles";
 	import { loadFull } from "tsparticles";
 

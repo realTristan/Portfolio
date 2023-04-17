@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Projects from "$lib/static/Projects.json";
+  import Projects from "$lib/assets/Projects.json";
   let headerInView: boolean = false;
   let observer: any;
 

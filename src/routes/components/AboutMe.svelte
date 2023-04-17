@@ -1,7 +1,7 @@
 <script lang="ts">
   // Import each of the summaries
-  import summary1 from "$lib/static/Summary1.txt?raw";
-  import summary2 from "$lib/static/Summary2.txt?raw";
+  import summary1 from "$lib/assets/Summary1.txt?raw";
+  import summary2 from "$lib/assets/Summary2.txt?raw";
 
   // Control word fade speed
   let wordFadeInterval: number = 400;
