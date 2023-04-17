@@ -7,29 +7,22 @@
 		<title>Tristan Simpson</title>
 		<meta name="description" content="Tristan Simpson's Portfolio" />
 		<meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.94d16840.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.8e289e6e.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.58457b28.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.75c31f13.js">
+		<link rel="modulepreload" href="./_app/immutable/start-1be0168d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index-8643f1aa.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-16cf91b6.js">
 	</head>
 	<body style="background-color: #101010; height: 3200px; overflow-x: hidden;">
 		
-			<script>
-				{
-					__sveltekit_1vafgd1 = {
-						env: {},
-						base: new URL(".", location).pathname.slice(0, -1),
-						element: document.currentScript.parentElement
-					};
+		<script type="module" data-sveltekit-hydrate="45h">
+			import { start } from "./_app/immutable/start-1be0168d.js";
 
-					Promise.all([
-						import("./_app/immutable/entry/start.94d16840.js"),
-						import("./_app/immutable/entry/app.75c31f13.js")
-					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_1vafgd1.element);
-					});
-				}
-			</script>
-		
+			start({
+				env: {},
+				hydrate: null,
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script>
 	</body>
 </html>
