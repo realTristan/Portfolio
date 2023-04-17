@@ -8,24 +8,24 @@
             "visible": false
         },
         {
-            "title": "Versa Anti Cheat",
-            "description": "Versa is a MOSS Gaming Anti-Cheat alterative built with Discord integration using Python and the PyQt5 GUI Library",
-            "image": "https://user-images.githubusercontent.com/75189508/121789353-430d8780-cba3-11eb-83a6-cb1230daef59.png",
-            "href": "https://github.com/realTristan/Versa",
+            "title": "Reborn Anti Cheat",
+            "description": "Reborn is a tournament anti-cheat. Reborn, built with Rust, is the prodigy to Versa, my other anti-cheat built with Python.",
+            "image": "https://user-images.githubusercontent.com/75189508/210023258-362d4ca1-9f21-4d33-b9a5-579b0796bc58.PNG",
+            "href": "https://github.com/realTristan/Reborn",
             "visible": false
         },
         {
-            "title": "Better Cache",
-            "description": "BetterCache is an easy-to-use modern caching system with full-text functionalities",
-            "image": "https://cdn.discordapp.com/attachments/855448636880191499/1046740898865745950/186757681-6b7f97e8-ec37-448a-83cc-75106ed16309.png",
-            "href": "https://github.com/realTristan/bettercache",
+            "title": "Hermes",
+            "description": "Hermes is a lightning-fast full-text-search and caching system. Perform a full-text-search in 10-100µs!",
+            "image": "https://user-images.githubusercontent.com/75189508/230987049-665418b1-3576-49b7-861e-29036859ad8a.png",
+            "href": "https://github.com/realTristan/Hermes",
             "visible": false
         }
     ],
     [
         {
             "title": "uwaterloo.courses",
-            "description": "uwaterloo.courses is an ultra fast course catalog for the University of Waterloo built with Svelte, Golang and Tailwind CSS",
+            "description": "uwaterloo.courses is a lightning-fast course catalog for the University of Waterloo built with Svelte, Golang and Tailwind CSS",
             "image": "https://user-images.githubusercontent.com/75189508/186290354-a5ed2710-f1a5-43c8-ae19-c0252d874fa3.png",
             "href": "https://github.com/realTristan/uwaterloo.courses",
             "visible": false
