@@ -9,14 +9,14 @@
         },
         {
             "title": "Reborn Anti Cheat",
-            "description": "Reborn is a tournament anti-cheat. Reborn, built with Rust, is the prodigy to Versa, my other anti-cheat built with Python.",
+            "description": "Reborn is a MOSS anti-cheat alternative built in Rust. Reborn is the prodigy to Versa, my other anti-cheat built with Python.",
             "image": "https://user-images.githubusercontent.com/75189508/210023258-362d4ca1-9f21-4d33-b9a5-579b0796bc58.PNG",
             "href": "https://github.com/realTristan/Reborn",
             "visible": false
         },
         {
             "title": "Hermes",
-            "description": "Hermes is a lightning-fast full-text-search and caching system. Perform a full-text-search in 10-100µs!",
+            "description": "Hermes is a lightning-fast full-text-search and caching system. Perform full-text-searchs in 10-100µs!",
             "image": "https://user-images.githubusercontent.com/75189508/230987049-665418b1-3576-49b7-861e-29036859ad8a.png",
             "href": "https://github.com/realTristan/Hermes",
             "visible": false
