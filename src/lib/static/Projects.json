@@ -9,7 +9,7 @@
         },
         {
             "title": "Reborn Anti Cheat",
-            "description": "Reborn is a MOSS anti-cheat alternative built in Rust. Reborn is the prodigy to Versa, my other anti-cheat built with Python.",
+            "description": "Reborn is a secure gaming anti-cheat written in Rust. Reborn is the superior to Versa, my other anti-cheat developed in Python",
             "image": "https://user-images.githubusercontent.com/75189508/210023258-362d4ca1-9f21-4d33-b9a5-579b0796bc58.PNG",
             "href": "https://github.com/realTristan/Reborn",
             "visible": false
