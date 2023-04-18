@@ -129,7 +129,7 @@
 	{/if}
 
 	<!-- Seperator -->
-	<div class="md:h-[100px] lg:h-[150px]"></div>
+	<div class="md:h-[60px] lg:h-[100px]"></div>
 
 	<!-- About Me -->
 	<div id="about"></div>
