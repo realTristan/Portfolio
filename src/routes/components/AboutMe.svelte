@@ -95,7 +95,7 @@
     <h2
       class="{s.visible
         ? 'opacity-1 -translate-y-2'
-        : 'opacity-0 -translate-y-0'} text-gray-300 mb-4 mr-1 text-center text-2xl duration-1000 ease-in-out tracking-widest"
+        : 'opacity-0 -translate-y-0'} text-gray-300 mb-4 mr-1 text-center text-md md:text-2xl duration-1000 ease-in-out tracking-widest"
     >
       {s.word}&nbsp;
     </h2>
@@ -108,7 +108,7 @@
     <h2
       class="{s.visible
         ? 'opacity-1 -translate-y-2'
-        : 'opacity-0 -translate-y-0'} text-gray-300 mb-4 mr-1 text-center text-2xl duration-1000 ease-in-out tracking-widest"
+        : 'opacity-0 -translate-y-0'} text-gray-300 mb-4 mr-1 text-center text-md md:text-2xl duration-1000 ease-in-out tracking-widest"
     >
       {s.word}&nbsp;
     </h2>

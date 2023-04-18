@@ -30,8 +30,7 @@
 	let SiteMounted: boolean,
 		MountDesignerTitle: boolean,
 		MountEngineerTitle: boolean,
-		MountEnthusiastTitle: boolean,
-		LaptopObjectLoaded: boolean = false;
+		MountEnthusiastTitle: boolean = false;
 
 	// Function to toggle the mounts
 	const ToggleMounts = () => {
@@ -64,8 +63,7 @@
 
 		// Load the laptop model
 		let LaptopModelScene = await SetModelScene(LaptopObject);
-		await LoadLaptopObject(Loader, LaptopModelScene, Textures.GithubWallpaper)
-			.then(() => LaptopObjectLoaded = true);
+		await LoadLaptopObject(Loader, LaptopModelScene, Textures.GithubWallpaper);
 	});
 </script>
 
@@ -79,7 +77,7 @@
 <div class="h-screen w-screen" style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"></div>
 
 <!-- Top left "TS" Header -->
-<div class="group top-14 left-12 fixed" style="z-index: 2;">
+<div class="group top-14 left-12 fixed invisible md:visible" style="z-index: 2;">
 	<a class="font-bold text-4xl text-white tracking-widest font-serif" href="/">TS</a>
 	<div class="bg-[#38ffff] h-1 mt-2 rounded-full w-0 group-hover:w-full duration-1000 ease-in-out"></div>
 </div>
@@ -89,7 +87,7 @@
 	<Sidebar/>
 
 	<!-- Main Header Content -->
-	<div class="mb-10 ml-32 md:ml-[20vw] 2xl:ml-64 mt-36 2xl:mt-48 relative" style="z-index: 2;">
+	<div class="mb-10 ml-16 md:ml-[20vw] 2xl:ml-64 mt-36 2xl:mt-48 relative" style="z-index: 2;">
 
 		<!-- Tristan Simpson Header -->
 		<h2 class="font-black text-xl xl:text-2xl text-gray-300 tracking-[8px]" in:fade={{ delay: 300, duration: 1000 }}>
@@ -117,30 +115,25 @@
 
 	<!-- Main Projects -->
 	<div id="projects"></div>
-	<section class="ml-36 md:ml-44 mt-40" style="z-index: 2; position: relative;">
+	<section class="ml-16 md:ml-44 mt-40" style="z-index: 2; position: relative;">
 		<MainProjects/>
 	</section>
 
 	<!-- Github -->
-	{#if LaptopObjectLoaded}
-		<section class="ml-36 md:ml-44 mt-64" style="z-index: 2; position: relative;">
-			<Github/>
-		</section>
-	{/if}
-
-	<!-- Seperator -->
-	<div class="md:h-[60px] lg:h-[100px]"></div>
+	<section class="ml-16 md:ml-44 mt-40" style="z-index: 2; position: relative;">
+		<Github/>
+	</section>
 
 	<!-- About Me -->
 	<div id="about"></div>
-	<section class="ml-36 md:ml-44 mt-40" style="z-index: 2; position: relative;">
+	<section class="ml-16 md:ml-44 mt-64" style="z-index: 2; position: relative;">
 		<AboutMe/>
 	</section>
 	<div class="h-40"></div>
 {/if}
 
 <!-- The 3D Laptop -->
-<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block ml-[26vw] mt-[1867px] xl:mt-[1980px] 2xl:mt-[2100px]" style="z-index: 2;"/>
+<canvas bind:this={ LaptopObject } class="absolute top-0 hidden lg:block ml-[26vw] mt-[1760px] xl:mt-[1950px] 2xl:mt-[2050px]" style="z-index: 2;"/>
 
 <!-- The 3D Wave Sphere -->
 <canvas bind:this={ WavySphere } style="top: 0px; right: 0px; position: fixed; z-index: 1;"/>

@@ -4,7 +4,10 @@
 
 /* Smooth Scroll */
 html { scroll-behavior: smooth; }
-body { overflow-x: hidden; }
+body {
+  overflow-x: hidden;
+  background-color: #101010;
+}
 
 /* Basic Fading Animations */
 .fade-out { animation: fade_out 1s; opacity: 0; }
