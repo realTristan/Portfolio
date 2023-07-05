@@ -1,4 +1,4 @@
-import { OrbitControls, THREE } from "$lib/imports";
+import { OrbitControls, THREE } from "$lib/Imports";
 
 // The SetModelScene() function is the primary function
 // for updating the sphere's scene data.

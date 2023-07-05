@@ -10,12 +10,12 @@
 		GLTFLoader, 
 		THREE, 
 		DRACO_LOADER 
-	} from "$lib/imports";
+	} from "$lib/Imports";
 
 	// Import Components
 	import MouseButton from './components/MouseButton.svelte';
 	import MainProjects from './components/Projects.svelte';
-	import SubHeader from "./components/SubHeader.svelte";
+	import SubHeader from "./components/Subheader.svelte";
 	import AboutMe from './components/AboutMe.svelte';
 	import Sidebar from "./components/Sidebar.svelte";
 	import Github from "./components/Github.svelte";

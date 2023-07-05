@@ -1,6 +1,6 @@
 <script lang="ts">
   // Library Imports
-  import { SetWavySphereScene } from "$lib/imports";
+  import { SetWavySphereScene } from "$lib/Imports";
   import { onMount, onDestroy } from "svelte";
   import { fade } from "svelte/transition";
 

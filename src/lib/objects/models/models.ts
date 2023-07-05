@@ -1,4 +1,4 @@
-import { THREE } from "$lib/imports";
+import { THREE } from "$lib/Imports";
 
 // Textures Map
 export const Textures = {
