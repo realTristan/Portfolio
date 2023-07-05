@@ -16,18 +16,18 @@
         },
         {
             "title": "Hermes",
-            "description": "Hermes is a lightning-fast full-text-search and caching system. Perform full-text-searches in 10-100µs!",
-            "image": "https://user-images.githubusercontent.com/75189508/230987049-665418b1-3576-49b7-861e-29036859ad8a.png",
-            "href": "https://github.com/realTristan/Hermes",
+            "description": "Hermes is a lightning-fast full-text-search and caching system. Perform full-text-searches in 10-300µs!",
+            "image": "https://user-images.githubusercontent.com/75189508/243120101-f884f643-00af-405d-900d-a636d119cf74.png",
+            "href": "https://github.com/realTristan/hermes",
             "visible": false
         }
     ],
     [
         {
-            "title": "uwaterloo.courses",
-            "description": "uwaterloo.courses is a lightning-fast course catalog for the University of Waterloo built with Svelte, Golang and Tailwind CSS",
-            "image": "https://user-images.githubusercontent.com/75189508/186290354-a5ed2710-f1a5-43c8-ae19-c0252d874fa3.png",
-            "href": "https://github.com/realTristan/uwaterloo.courses",
+            "title": "verlet",
+            "description": "verlet is a physics engine written from scratch and developed in python. It's currently being rewritten in C#.",
+            "image": "https://user-images.githubusercontent.com/75189508/250628389-ff8fefe5-b300-4802-8538-9e714525e38c.png",
+            "href": "https://github.com/realTristan/verlet",
             "visible": false
         },
         {

@@ -1,7 +1,7 @@
 <script lang="ts">
   // Import each of the summaries
-  import summary1 from "$lib/assets/Summary1.txt?raw";
-  import summary2 from "$lib/assets/Summary2.txt?raw";
+  import summary1 from "$lib/static/summary1.txt?raw";
+  import summary2 from "$lib/static/summary2.txt?raw";
 
   // Control word fade speed
   let wordFadeInterval: number = 400;
@@ -20,9 +20,7 @@
   ): any[] {
     // Add The About Me Summary Word Animations
     for (let i = 1; i < SummaryConstant.length; i++) {
-      // If previous split was the end of a sentance
       if (SummaryConstant[i - 1].includes(".")) wordFadeInterval += 1000;
-      // If the previous split requires a pause
       if (SummaryConstant[i - 1].includes(",")) wordFadeInterval += 500;
 
       // Append the word to the array
@@ -32,6 +30,7 @@
         delay: (i + 1) * 200 + wordFadeInterval,
       });
     }
+    
     // Return the new array
     return summaryWordsArray;
   }
