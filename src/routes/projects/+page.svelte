@@ -5,23 +5,23 @@
   import { fade } from "svelte/transition";
 
   // Variables
-  let WavySphere: any = undefined;
-  let ScrollInterval: any = null;
-  let SiteMounted: boolean = false;
-  let Repos: any[] = [];
+  let wavySphere: any = undefined;
+  let scrollInterval: any = null;
+  let siteMounted: boolean = false;
+  let repos: any[] = [];
 
   // On Page Mount/Destroy
-  onDestroy(async () => clearInterval(ScrollInterval));
+  onDestroy(async () => clearInterval(scrollInterval));
   onMount(async () => {
     // Initialize the scene and the page contents
-    SiteMounted = true;
-    await SetWavySphereScene(WavySphere);
+    siteMounted = true;
+    await SetWavySphereScene(wavySphere);
 
     // Get 'realTristan' Github Data
     await self
       .fetch("https://api.github.com/users/realTristan/repos?per_page=100")
       .then((response) => response.json())
-      .then((json) => (Repos = [...Repos, ...json]))
+      .then((json) => (repos = [...repos, ...json]))
       .catch((error) => console.log(error));
 
     // Get 'Simpson Computer Technologies Research' Github Data
@@ -30,7 +30,7 @@
         "https://api.github.com/users/Simpson-Computer-Technologies-Research/repos?per_page=100"
       )
       .then((response) => response.json())
-      .then((json) => (Repos = [...Repos, ...json]))
+      .then((json) => (repos = [...repos, ...json]))
       .catch((error) => console.log(error));
 
     // Scroll wheel action event listener. Don't use if on mobile!
@@ -40,20 +40,20 @@
       )
     ) {
       // Auto Scroll intervals and variables
-      let AutoScroll = false;
-      ScrollInterval = window.setInterval(
-        async () => (AutoScroll ? window.scrollBy(0, 5) : 0), 15
+      let autoScroll = false;
+      scrollInterval = window.setInterval(
+        async () => (autoScroll ? window.scrollBy(0, 5) : 0), 15
       );
-      setTimeout(async () => (AutoScroll = true), 4000);
+      setTimeout(async () => (autoScroll = true), 4000);
 
       // Scroll timeouts
       let timeout: any = null;
       document.addEventListener("wheel", (_) => {
-        if (AutoScroll) AutoScroll = false;
+        if (autoScroll) autoScroll = false;
 
         // After two seconds of not scrolling, auto scroll again
         clearTimeout(timeout);
-        timeout = setTimeout(async () => (AutoScroll = true), 5000);
+        timeout = setTimeout(async () => (autoScroll = true), 5000);
       });
     }
   });
@@ -69,7 +69,7 @@
   style="background: linear-gradient(0deg, rgba(5, 5, 5, 0.2) 15%, rgba(39, 39, 39, 0) 80%); position: fixed;"
 />
 
-{#if SiteMounted}
+{#if siteMounted}
   <!-- Main Header Content -->
   <div class="ml-40 xl:ml-48 2xl:ml-64 mt-16 lg:mt-36 xl:mt-44 mb-10 lg:fixed">
     <div class="group">
@@ -125,7 +125,7 @@
   <!-- Github Repositories -->
   <div class="lg:flex justify-center lg:justify-end" style="z-index: -1;">
     <div>
-      {#each Repos as data, i}
+      {#each repos as data, i}
         <div
           class="group my-20 translate-y-0 hover:-translate-y-8 duration-[400ms] ease-in-out lg:mr-10 mx-28 lg:mx-0 w-[20rem] md:w-[40rem] 2xl:w-[50rem]"
           in:fade={{ delay: 2200 + 250 * i, duration: 1000 }}
@@ -163,6 +163,6 @@
 
 <!-- The 3D Wave Sphere -->
 <canvas
-  bind:this={WavySphere}
+  bind:this={wavySphere}
   style="top: 0px; right: 0px; z-index: -1; position: fixed;"
 />

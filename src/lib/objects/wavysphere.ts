@@ -26,18 +26,18 @@ let Renderer: THREE.WebGLRenderer;
 const animate = async () => {
   requestAnimationFrame(animate);
 
-  // The Sphere's "Wave" Variables
+  // The Wave Speed
   const SPEED: number = performance.now() * 0.001;
 
   // Iterate over the spheres vertices
-  for (let i = 500; i < SPHERE.geometry.vertices.length; i++) {
-    let v = SPHERE.geometry.vertices[i];
-    // Use the noise.perlin3 function to create the "wavy" look.
-    // '3' is the number of 'waves'
+  let vertices: THREE.Vector3[] = SPHERE.geometry.vertices;
+  for (let i = 500; i < vertices.length; i++) {
+    let v: THREE.Vector3 = vertices[i];
     v.normalize().multiplyScalar(
       1 + 0.3 * noise.perlin3(v.x * 3 + SPEED, v.y * 3, v.z * 3)
     );
   }
+
   // Update the vertices and render the new sphere
   SPHERE.geometry.verticesNeedUpdate = true;
   Renderer.render(SCENE, CAMERA);
@@ -52,6 +52,7 @@ export const resize = async () => {
   // Update projection matrix
   CAMERA.updateProjectionMatrix();
 };
+
 // Window Resize Listener
 window.addEventListener("resize", resize);
 
@@ -63,7 +64,7 @@ export const SetWavySphereScene = async (canvas: any) => {
     canvas: canvas,
     alpha: true,
     powerPreference: "high-performance",
-    antialias: true,
+    antialias: false,
   });
   Renderer.setPixelRatio(window.devicePixelRatio);
 
