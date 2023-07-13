@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Projects from "$lib/static/projects.json";
+  import info from "../../info.json";
   let headerInView: boolean = false;
   let observer: any;
 
@@ -32,9 +32,9 @@
 
     // Enable the headers and show all the projects
     headerInView = true;
-    for (let i = 0; i < Projects.length; i++) {
-      for (let n = 0; n < Projects[i].length; n++) {
-        setTimeout(() => (Projects[i][n].visible = true), (i + 1) * 400);
+    for (let i = 0; i < info.projects.length; i++) {
+      for (let n = 0; n < info.projects[i].length; n++) {
+        setTimeout(() => (info.projects[i][n].visible = true), (i + 1) * 400);
       }
     }
   }}
@@ -42,7 +42,7 @@
   <a class="text-white text-2xl md:text-4xl font-black tracking-widest" href="/projects">PROJECTS</a>
   <div class="bg-[#38ffff] h-1 mt-2 rounded-full {headerInView ? 'w-24': 'w-0'} duration-[2000ms] ease-in-out"/>
   <div class="mt-16">
-    {#each Projects as project}
+    {#each info.projects as project}
       <div class="lg:flex mt-12 mr-20 w-[32rem] lg:w-auto">
         {#each project as p}
           <a

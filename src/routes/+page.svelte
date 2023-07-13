@@ -14,14 +14,14 @@
 
 	// Import Components
 	import MouseButton from './components/MouseButton.svelte';
-	import MainProjects from './components/Projects.svelte';
+	import Projects from './components/Projects.svelte';
 	import SubHeader from "./components/Subheader.svelte";
 	import AboutMe from './components/AboutMe.svelte';
 	import Sidebar from "./components/Sidebar.svelte";
 	import Github from "./components/Github.svelte";
 
 	// Particles imports
-	import * as ParticleData from '$lib/static/particles.json';
+	import * as ParticleData from "../particles.json"
 	import Particles from "svelte-particles";
 	import { loadFull } from "tsparticles";
 
@@ -113,10 +113,10 @@
 	<!-- Seperator -->
 	<div class="md:h-[200px] lg:h-[250px] xl:h-[300px]"></div>
 
-	<!-- Main Projects -->
+	<!-- Projects -->
 	<div id="projects"></div>
 	<section class="ml-16 md:ml-44 mt-40" style="z-index: 2; position: relative;">
-		<MainProjects/>
+		<Projects/>
 	</section>
 
 	<!-- Github -->

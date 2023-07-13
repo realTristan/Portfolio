@@ -24,6 +24,8 @@
 		"@sveltejs/adapter-static": "^2.0.2",
 		"autoprefixer": "^10.4.14",
 		"gh-pages": "^5.0.0",
+		"prettier": "^3.0.0",
+		"prettier-plugin-tailwindcss": "^0.4.0",
 		"simplenoise": "^1.0.1",
 		"svelte-inview": "^4.0.0",
 		"svelte-particles": "^2.9.3",

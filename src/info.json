@@ -1,0 +1,54 @@
+{
+  "summaries": [
+    "* i'm Tristan. I'm a full-stack developer with over three years of experience designing, developing, and implementing solutions using a vast range of technologies and programming languages. Because of my professional experience in developing high-quality applications, I can confidently understand the majority of languages and services.",
+    "* Dans mes temps libres j'aime faire le vélo de montagne, enseigner la programmation, et de construire mes propres projets!"
+  ],
+  "projects": [
+    [
+      {
+        "title": "Simpson Research",
+        "description": "Simpson Research is my organization dedicated to teaching advanced programming techniques",
+        "image": "https://cdn.discordapp.com/attachments/855448636880191499/1038470615092433116/Capture.PNG",
+        "href": "https://simpsonresearch.ca/",
+        "visible": false
+      },
+      {
+        "title": "Reborn Anti Cheat",
+        "description": "Reborn is a secure gaming anti-cheat written in Rust and is the superior to Versa, my other anti-cheat developed in Python",
+        "image": "https://user-images.githubusercontent.com/75189508/210023258-362d4ca1-9f21-4d33-b9a5-579b0796bc58.PNG",
+        "href": "https://github.com/realTristan/Reborn",
+        "visible": false
+      },
+      {
+        "title": "Hermes",
+        "description": "Hermes is a lightning-fast full-text-search and caching system. Perform full-text-searches in 10-300µs!",
+        "image": "https://user-images.githubusercontent.com/75189508/243120101-f884f643-00af-405d-900d-a636d119cf74.png",
+        "href": "https://github.com/realTristan/hermes",
+        "visible": false
+      }
+    ],
+    [
+      {
+        "title": "verlet",
+        "description": "verlet is a physics engine written from scratch and developed in python. It's currently being rewritten in C#.",
+        "image": "https://user-images.githubusercontent.com/75189508/250628389-ff8fefe5-b300-4802-8538-9e714525e38c.png",
+        "href": "https://github.com/realTristan/verlet",
+        "visible": false
+      },
+      {
+        "title": "Athena",
+        "description": "Athena is a discord matchmaking bot with a fully functional caching system, MySQL database, dozens of commands, and more!",
+        "image": "https://cdn.discordapp.com/attachments/855448636880191499/1065960252119449650/Capture.PNG",
+        "href": "https://github.com/realTristan/Athena",
+        "visible": false
+      },
+      {
+        "title": "lat.cli",
+        "description": "lat.cli is an easy-to-use command line tool written in Rust for importing latex .sty files from Github",
+        "image": "https://user-images.githubusercontent.com/75189508/207660487-afff32e3-9ac2-474e-b3b2-36572537e272.png",
+        "href": "https://github.com/realTristan/lat.cli",
+        "visible": false
+      }
+    ]
+  ]
+}
