@@ -29,8 +29,8 @@
     ],
     [
       {
-        "title": "verlet",
-        "description": "verlet is a physics engine written from scratch and developed in python. It's currently being rewritten in C#.",
+        "title": "Verlet",
+        "description": "Verlet is a physics engine written from scratch and developed in C++ and Python.",
         "image": "https://user-images.githubusercontent.com/75189508/250628389-ff8fefe5-b300-4802-8538-9e714525e38c.png",
         "href": "https://github.com/realTristan/verlet",
         "visible": false
@@ -43,10 +43,10 @@
         "visible": false
       },
       {
-        "title": "lat.cli",
-        "description": "lat.cli is an easy-to-use command line tool written in Rust for importing latex .sty files from Github",
-        "image": "https://user-images.githubusercontent.com/75189508/207660487-afff32e3-9ac2-474e-b3b2-36572537e272.png",
-        "href": "https://github.com/realTristan/lat.cli",
+        "title": "CGL",
+        "description": "CGL is an easy-to-use, custom, and lightweight graphics library written in C/C++. It's simplicity was inspired by PyGame.",
+        "image": "https://user-images.githubusercontent.com/75189508/254262383-f932e185-caa2-4ff6-bdfd-a1d29ff334d6.png",
+        "href": "https://github.com/realTristan/CGL",
         "visible": false
       }
     ]
